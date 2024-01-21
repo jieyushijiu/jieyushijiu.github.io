@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #aa4d4d 0%, #344da2 100%);
 }
 
 .text-color {
@@ -593,6 +593,7 @@ header .go-back i {
     font-weight: 400;
 }
 
+/*
 @-webkit-keyframes rainbow {
 
     0%,
@@ -684,6 +685,7 @@ header .go-back i {
         background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
 }
+*/
 
 .index-card {
     margin-top: -10px;
@@ -2137,4 +2139,18 @@ footer .copy-right {
     height: 50px;
     padding: 0;
     margin: 0;
+}
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #0ee1b3;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(218, 202, 255);
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
 }

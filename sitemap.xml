@@ -4,12 +4,22 @@
 
     <sitemap>
         <loc>http://jieyushijiu.github.io/post-sitemap.xml</loc>
-        <lastmod>2024-01-21T05:27:20.249Z</lastmod>
+        <lastmod>2024-01-21T14:23:50.880Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://jieyushijiu.github.io/page-sitemap.xml</loc>
         <lastmod>2024-01-21T10:07:50.649Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://jieyushijiu.github.io/category-sitemap.xml</loc>
+        <lastmod>2024-01-21T14:23:50.880Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://jieyushijiu.github.io/tag-sitemap.xml</loc>
+        <lastmod>2024-01-21T14:23:50.880Z</lastmod>
     </sitemap>
 
 </sitemapindex>

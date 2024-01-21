@@ -1,6 +1,374 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>typora-vue-theme Theme introduction</title>
+    <url>/2018/09/07/docker-shi-yong/</url>
+    <content><![CDATA[<h1 id="docker使用"><a href="#docker使用" class="headerlink" title="docker使用"></a>docker使用</h1><p>[toc]</p>
+<h3 id="Docker三个基本概念"><a href="#Docker三个基本概念" class="headerlink" title="Docker三个基本概念"></a>Docker三个基本概念</h3><ul>
+<li><strong>镜像（Image）</strong>：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。</li>
+<li><strong>容器（容器ID&#x2F;NAME）</strong>：镜像（Image）和容器（容器ID&#x2F;NAME）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</li>
+<li><strong>仓库（Repository）</strong>：仓库可看成一个代码控制中心，用来保存镜像。</li>
+</ul>
+<p>Docker 使用客户端-服务器 (C&#x2F;S) 架构模式，使用远程API来管理和创建Docker容器。</p>
+<p>Docker 容器通过 Docker 镜像来创建。</p>
+<p>容器与镜像的关系类似于面向对象编程中的对象与类。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Docker</th>
+<th align="left">面向对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">容器</td>
+<td align="left">对象</td>
+</tr>
+<tr>
+<td align="left">镜像</td>
+<td align="left">类</td>
+</tr>
+</tbody></table>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th align="left">概念</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Docker 镜像(Images)</td>
+<td align="left">Docker 镜像是用于创建 Docker 容器的模板，比如 Ubuntu 系统。</td>
+</tr>
+<tr>
+<td align="left">Docker 容器(容器ID&#x2F;NAME)</td>
+<td align="left">容器是独立运行的一个或一组应用，是镜像运行时的实体。</td>
+</tr>
+<tr>
+<td align="left">Docker 客户端(Client)</td>
+<td align="left">Docker 客户端通过命令行或者其他工具使用 Docker SDK (<a href="https://docs.docker.com/develop/sdk/">https://docs.docker.com/develop/sdk/</a>) 与 Docker 的守护进程通信。</td>
+</tr>
+<tr>
+<td align="left">Docker 主机(Host)</td>
+<td align="left">一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。</td>
+</tr>
+<tr>
+<td align="left">Docker Registry</td>
+<td align="left">Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。Docker Hub(<a href="https://hub.docker.com/">https://hub.docker.com</a>) 提供了庞大的镜像集合供使用。一个 Docker Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <strong>&lt;仓库名&gt;:&lt;标签&gt;</strong> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <strong>latest</strong> 作为默认标签。</td>
+</tr>
+<tr>
+<td align="left">Docker Machine</td>
+<td align="left">Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。</td>
+</tr>
+</tbody></table>
+<h3 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h3><h5 id="镜像操作："><a href="#镜像操作：" class="headerlink" title="镜像操作："></a><strong>镜像操作：</strong></h5><ol>
+<li><p><em>列出本地所有镜像：</em></p>
+<ul>
+<li><p><code>docker images</code></p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hecs-350259:~:<span class="token comment"># docker images</span>
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+test/centos   v1        aba5e913250d   <span class="token number">16</span> minutes ago   231MB
+ubuntu        latest    ba6acccedd29   <span class="token number">2</span> years ago      <span class="token number">72</span>.8MB
+centos        latest    5d0da3dc9764   <span class="token number">2</span> years ago      231MB
+ubuntu        <span class="token number">15.10</span>     9b9cb95443b5   <span class="token number">7</span> years ago      137MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  各个选项说明:</p>
+<ul>
+<li><strong>REPOSITORY：</strong>表示镜像的仓库源</li>
+<li><strong>TAG：</strong>镜像的标签</li>
+<li><strong>IMAGE ID：</strong>镜像ID</li>
+<li><strong>CREATED：</strong>镜像创建时间</li>
+<li><strong>SIZE：</strong>镜像大小</li>
+</ul>
+<p>  <em>同一仓库源可以有多个 TAG，代表这个仓库源的不同个版本，如 ubuntu 仓库源里，有 15.10、14.04 等多个不同的版本，我们使用 REPOSITORY:TAG 来定义不同的镜像。</em></p>
+</li>
+</ul>
+</li>
+<li><p><em>查找镜像</em></p>
+<ul>
+<li><p>通过Docker Hub 网址为： **<a href="https://hub.docker.com/**%E6%90%9C%E7%B4%A2">https://hub.docker.com/**搜索</a></p>
+</li>
+<li><p>通过<code>docker search [关键字]</code></p>
+<p>  <img src="/docker%E4%BD%BF%E7%94%A8.assets/image-20231226214710217.png" alt="image-20231226214710217"></p>
+</li>
+</ul>
+</li>
+<li><p><em>下载镜像：</em></p>
+<ul>
+<li><code>docker pull [image_name]</code></li>
+<li>参数：<ul>
+<li><code>-a, --all-tags</code>：下载所有标签的镜像 。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>删除本地镜像：</em></p>
+<ul>
+<li><code>docker rmi [image_name]</code></li>
+<li>参数：<ul>
+<li><code>-f, --force</code>：强制删除镜像。</li>
+<li><code>-a, --all</code>：删除所有镜像。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>创建镜像</p>
+<ul>
+<li><p>从已经创建的容器中更新镜像，并提交这个镜像</p>
+<ul>
+<li><p>更新镜像</p>
+<ol>
+<li><p>进入镜像，执行更新命令，如ubuntu执行<code>apt-get update</code>更新系统。</p>
+</li>
+<li><p>通过<code>docker commit</code>提交副本</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> commit <span class="token parameter variable">-m</span><span class="token operator">=</span><span class="token string">"has update"</span> <span class="token parameter variable">-a</span><span class="token operator">=</span><span class="token string">"runoob"</span> e218edb10161 runoob/ubuntu:v2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> <em>参数说明：</em></p>
+<ul>
+<li>-m:提交的描述信息（更改描述）</li>
+<li>-a:指定镜像作者</li>
+<li>runoob&#x2F;ubuntu:v2:指定要创建的目标镜像名</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>使用<code>Docker build</code>创建新的镜像</p>
+<p>  <em>docker build -t 镜像名称 &#x2F;Dockerfile所在的目录路径</em></p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> xiaosan/centos:6.7 /docker/dockerfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>  <em>参数说明：</em></p>
+<ul>
+<li>-t:指定创建的镜像名</li>
+<li>&#x2F;docker&#x2F;dockerfile:dockerfile文件的所在目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>修改镜像标签：</p>
+<ul>
+<li><p>使用<code>docker tag</code>修改镜像标签</p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> tag 860c279d2fec xiaosan/centos:dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h5 id="容器操作："><a href="#容器操作：" class="headerlink" title="容器操作："></a><strong>容器操作：</strong></h5><ol>
+<li><p><em>正在运行的容器：</em></p>
+<ul>
+<li><p><code>docker ps</code></p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><code>-a, --all</code>：列出所有容器，包括停止的。</li>
+<li><code>-n</code>:显示最近创建的容器</li>
+<li><code>-q</code>:只显示容器编号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>创建并运行一个容器：</em></p>
+<ul>
+<li><p><code>docker run [参数] [image] [command] [args]</code></p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hecs-350259:~:<span class="token comment"># docker run -it centos /bin/bash</span>
+<span class="token punctuation">[</span>root@946cce57f9d1 /<span class="token punctuation">]</span><span class="token comment"># ls</span>
+bin  etc   lib	  lost+found  mnt  proc  run   srv  tmp  var
+dev  home  lib64  media       opt  root  sbin  sys  usr
+<span class="token punctuation">[</span>root@946cce57f9d1 /<span class="token punctuation">]</span><span class="token comment"># exit #退出终端</span>
+<span class="token builtin class-name">exit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><code>-d, --detach</code>：在后台运行容器。</li>
+<li><code>-p, --publish</code>：将容器端口映射到主机端口。</li>
+<li><code>--name</code>：为容器指定名称。</li>
+<li><code>-it</code>，启动一个交互式容器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>启动停止的容器：</em></p>
+<ul>
+<li><code>docker restart/start [参数] [容器ID/NAME]</code></li>
+<li>参数：<ul>
+<li><code>-a, --attach</code>：启动并附加到容器。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>停止运行中的容器：</em></p>
+<ul>
+<li><code>docker stop [参数] [容器ID/NAME]</code></li>
+<li>参数：<ul>
+<li><code>-t, --time</code>：指定停止前等待的时间，默认为10秒。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>在运行中的容器中执行命令：</em></p>
+<ul>
+<li><p><code>docker exec [参数] [容器ID/NAME] [command]</code></p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><code>-it</code>：以交互式方式执行命令。</li>
+</ul>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hecs-350259:~:<span class="token comment"># docker ps                 </span>
+CONTAINER ID  IMAGE   COMMAND      CREATED       STATUS   PORTS     NAMES
+eefa60edf69d  centos  <span class="token string">"/bin/bash"</span>  <span class="token number">7</span> minutes ago   Up    <span class="token number">3</span> seconds  centos_test
+Usage:  <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span> CONTAINER COMMAND <span class="token punctuation">[</span>ARG<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+hecs-350259:~:<span class="token comment"># docker exec -it centos_test /bin/bash</span>
+<span class="token punctuation">[</span>root@eefa60edf69d /<span class="token punctuation">]</span><span class="token comment"># exit</span>
+<span class="token builtin class-name">exit</span>
+hecs-350259:~:<span class="token comment"># docker ps   #退出后容器任然在运行                         </span>
+CONTAINER ID  IMAGE  COMMAND      CREATED      STATUS     PORTS       NAMES
+eefa60edf69d centos  <span class="token string">"/bin/bash"</span>  <span class="token number">9</span> minutes ago  Up  About a minute  centos_test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p><em>导出容器</em></p>
+<ul>
+<li><p><code>docker export [容器ID/NAME] &gt; 路径/包名.tar</code></p>
+  <pre class="line-numbers language-none"><code class="language-none">hecs-350259:~:# docker export centos_test &gt; centos.tar         
+hecs-350259:~:# ls    
+centos.tar  install.sh
+hecs-350259:~:# ll
+total 228M
+-rw-r--r-- 1 root root 228M Dec 26 21:17 centos.tar
+-rw-r--r-- 1 root root  35K Dec 19 16:03 install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p><em>导入容器</em></p>
+<ul>
+<li><p>cat 快照文件 | docker import - [镜像源]:tag</p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hecs-350259:~:<span class="token comment"># cat centos.tar | docker import - test/centos:v1</span>
+sha256:aba5e913250d3fc539ad01a4cf798801426f4529ddf1459803d7f12813e721d6
+hecs-350259:~:<span class="token comment"># docker images                         </span>
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+test/centos   v1        aba5e913250d   <span class="token number">16</span> seconds ago   231MB
+ubuntu        latest    ba6acccedd29   <span class="token number">2</span> years ago      <span class="token number">72</span>.8MB
+centos        latest    5d0da3dc9764   <span class="token number">2</span> years ago      231MB
+ubuntu        <span class="token number">15.10</span>     9b9cb95443b5   <span class="token number">7</span> years ago      137MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>此外，也可以通过指定 URL 或者某个目录来导入，例如：</p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token function">import</span> http://example.com/exampleimage.tgz example/imagerepo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p><em>删除容器</em></p>
+<ul>
+<li><p><code>docker rm -f [容器ID/NAME]</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hecs-350259:~:<span class="token comment"># docker ps   </span>
+CONTAINER ID  IMAGE   COMMAND      CREATED        STATUS   PORTS      NAMES
+eefa60edf69d  centos  <span class="token string">"/bin/bash"</span>  <span class="token number">59</span> minutes ago   Up    <span class="token number">51</span> minutes  centos_test
+hecs-350259:~:<span class="token comment"># docker rm -f centos_test   </span>
+centos_test
+hecs-350259:~:<span class="token comment"># docker ps               </span>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h5 id="容器连接："><a href="#容器连接：" class="headerlink" title="容器连接："></a>容器连接：</h5><p>1. </p>
+<h5 id="容器状态管理："><a href="#容器状态管理：" class="headerlink" title="容器状态管理："></a><strong>容器状态管理：</strong></h5><ol>
+<li><em>查看容器日志：</em><ul>
+<li><code>docker logs [参数] [容器ID/NAME]</code></li>
+<li>参数：<ul>
+<li><code>--follow</code>：实时跟踪日志。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>显示容器详细信息：</em><ul>
+<li><code>docker inspect [容器ID/NAME]</code></li>
+</ul>
+</li>
+<li><em>显示容器中运行的进程：</em><ul>
+<li><code>docker top [容器ID/NAME]</code></li>
+</ul>
+</li>
+<li><em>显示容器实时资源使用情况：</em><ul>
+<li><code>docker stats [参数] [容器ID/NAME]</code></li>
+<li>参数：<ul>
+<li><code>--no-stream</code>：关闭实时输出。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="网络操作："><a href="#网络操作：" class="headerlink" title="网络操作："></a><strong>网络操作：</strong></h5><ol>
+<li><em>列出所有网络：</em><ul>
+<li><code>docker network ls</code></li>
+</ul>
+</li>
+<li><em>显示网络详细信息：</em><ul>
+<li><code>docker network inspect [network]</code></li>
+</ul>
+</li>
+<li><em>创建自定义网络：</em><ul>
+<li><code>docker network create [参数] [network]</code></li>
+<li>参数：<ul>
+<li><code>--driver</code>：指定网络驱动程序。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>将容器连接到网络：</em><ul>
+<li><code>docker network connect [network] [容器ID/NAME]</code></li>
+</ul>
+</li>
+<li><em>将容器从网络断开：</em><ul>
+<li><code>docker network disconnect [network] [容器ID/NAME]</code></li>
+</ul>
+</li>
+</ol>
+<h5 id="数据卷操作："><a href="#数据卷操作：" class="headerlink" title="数据卷操作："></a><strong>数据卷操作：</strong></h5><ol>
+<li><em>列出所有数据卷：</em><ul>
+<li><code>docker volume ls</code></li>
+</ul>
+</li>
+<li><em>创建数据卷：</em><ul>
+<li><code>docker volume create [参数] [volume]</code></li>
+</ul>
+</li>
+<li><em>显示数据卷详细信息：</em><ul>
+<li><code>docker volume inspect [volume]</code></li>
+</ul>
+</li>
+</ol>
+<h5 id="其他操作："><a href="#其他操作：" class="headerlink" title="其他操作："></a><strong>其他操作：</strong></h5><ol>
+<li><em>显示 Docker 系统信息：</em><ul>
+<li><code>docker info</code></li>
+</ul>
+</li>
+<li><em>显示 Docker 版本信息：</em><ul>
+<li><code>docker version</code></li>
+</ul>
+</li>
+<li><em>清理无用的镜像、容器和数据卷：</em><ul>
+<li><code>docker system prune [参数]</code></li>
+<li>参数：<ul>
+<li><code>--all, -a</code>：清理所有未使用的资源。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>使用 Docker Compose 运行多容器应用：</em><ul>
+<li><code>docker-compose up [参数]</code></li>
+<li>参数：<ul>
+<li><code>-d, --detach</code>：在后台运行。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2024/01/21/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
