@@ -6,7 +6,7 @@
   <link href="http://jieyushijiu.github.io/atom.xml" rel="self"/>
   
   <link href="http://jieyushijiu.github.io/"/>
-  <updated>2024-02-01T13:19:03.625Z</updated>
+  <updated>2024-02-01T13:22:56.663Z</updated>
   <id>http://jieyushijiu.github.io/</id>
   
   <author>
@@ -17,19 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Linux笔记</title>
-    <link href="http://jieyushijiu.github.io/2024/02/01/linux-xue-xi-bi-ji/"/>
-    <id>http://jieyushijiu.github.io/2024/02/01/linux-xue-xi-bi-ji/</id>
+    <title>Javascript初学</title>
+    <link href="http://jieyushijiu.github.io/2024/02/01/javascript/"/>
+    <id>http://jieyushijiu.github.io/2024/02/01/javascript/</id>
     <published>2024-02-01T11:25:00.000Z</published>
-    <updated>2024-02-01T13:19:03.625Z</updated>
+    <updated>2024-02-01T13:22:56.663Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Linux学习笔记&quot;&gt;&lt;a href=&quot;#Linux学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Linux学习笔记&quot;&gt;&lt;/a&gt;Linux学习笔记&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h1 id=&quot;JavaScript&quot;&gt;&lt;a href=&quot;#JavaScript&quot; class=&quot;headerlink&quot; title=&quot;JavaScript&quot;&gt;&lt;/a&gt;JavaScript&lt;/h1&gt;&lt;h3 id=&quot;位置&quot;&gt;&lt;a href=&quot;#位置&quot;</summary>
         
       
     
@@ -38,9 +37,7 @@
     <category term="Markdown" scheme="http://jieyushijiu.github.io/categories/Markdown/"/>
     
     
-    <category term="Typora" scheme="http://jieyushijiu.github.io/tags/Typora/"/>
-    
-    <category term="Markdown" scheme="http://jieyushijiu.github.io/tags/Markdown/"/>
+    <category term="JavaScript" scheme="http://jieyushijiu.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -49,7 +46,7 @@
     <link href="http://jieyushijiu.github.io/2024/02/01/hexo-github-bu-shu/"/>
     <id>http://jieyushijiu.github.io/2024/02/01/hexo-github-bu-shu/</id>
     <published>2024-02-01T11:25:00.000Z</published>
-    <updated>2024-02-01T13:17:54.007Z</updated>
+    <updated>2024-02-01T13:22:44.221Z</updated>
     
     
       
@@ -66,25 +63,26 @@
     <category term="Markdown" scheme="http://jieyushijiu.github.io/categories/Markdown/"/>
     
     
-    <category term="Typora" scheme="http://jieyushijiu.github.io/tags/Typora/"/>
+    <category term="hexo" scheme="http://jieyushijiu.github.io/tags/hexo/"/>
     
-    <category term="Markdown" scheme="http://jieyushijiu.github.io/tags/Markdown/"/>
+    <category term="github" scheme="http://jieyushijiu.github.io/tags/github/"/>
     
   </entry>
   
   <entry>
-    <title>Javascript初学</title>
-    <link href="http://jieyushijiu.github.io/2024/02/01/javascript/"/>
-    <id>http://jieyushijiu.github.io/2024/02/01/javascript/</id>
+    <title>Linux笔记</title>
+    <link href="http://jieyushijiu.github.io/2024/02/01/linux-xue-xi-bi-ji/"/>
+    <id>http://jieyushijiu.github.io/2024/02/01/linux-xue-xi-bi-ji/</id>
     <published>2024-02-01T11:25:00.000Z</published>
-    <updated>2024-02-01T13:18:37.639Z</updated>
+    <updated>2024-02-01T13:23:18.504Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;JavaScript&quot;&gt;&lt;a href=&quot;#JavaScript&quot; class=&quot;headerlink&quot; title=&quot;JavaScript&quot;&gt;&lt;/a&gt;JavaScript&lt;/h1&gt;&lt;h3 id=&quot;位置&quot;&gt;&lt;a href=&quot;#位置&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Linux学习笔记&quot;&gt;&lt;a href=&quot;#Linux学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Linux学习笔记&quot;&gt;&lt;/a&gt;Linux学习笔记&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -93,30 +91,9 @@
     <category term="Markdown" scheme="http://jieyushijiu.github.io/categories/Markdown/"/>
     
     
-    <category term="Typora" scheme="http://jieyushijiu.github.io/tags/Typora/"/>
+    <category term="Linux" scheme="http://jieyushijiu.github.io/tags/Linux/"/>
     
-    <category term="Markdown" scheme="http://jieyushijiu.github.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://jieyushijiu.github.io/2024/01/21/hello-world/"/>
-    <id>http://jieyushijiu.github.io/2024/01/21/hello-world/</id>
-    <published>2024-01-21T05:28:30.287Z</published>
-    <updated>2024-01-21T11:24:19.998Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
+    <category term="vims" scheme="http://jieyushijiu.github.io/tags/vims/"/>
     
   </entry>
   
@@ -125,7 +102,7 @@
     <link href="http://jieyushijiu.github.io/2018/09/07/docker-shi-yong/"/>
     <id>http://jieyushijiu.github.io/2018/09/07/docker-shi-yong/</id>
     <published>2018-09-07T01:25:00.000Z</published>
-    <updated>2024-02-01T13:16:20.567Z</updated>
+    <updated>2024-02-01T13:22:11.661Z</updated>
     
     
       
@@ -142,9 +119,7 @@
     <category term="Markdown" scheme="http://jieyushijiu.github.io/categories/Markdown/"/>
     
     
-    <category term="Typora" scheme="http://jieyushijiu.github.io/tags/Typora/"/>
-    
-    <category term="Markdown" scheme="http://jieyushijiu.github.io/tags/Markdown/"/>
+    <category term="docker" scheme="http://jieyushijiu.github.io/tags/docker/"/>
     
   </entry>
   

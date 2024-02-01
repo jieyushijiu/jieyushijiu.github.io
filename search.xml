@@ -1,6 +1,706 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Javascript初学</title>
+    <url>/2024/02/01/javascript/</url>
+    <content><![CDATA[<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a><strong>位置</strong></h3><ol>
+<li><p>位于头部<code>&lt;head&gt;&lt;/head&gt;</code></p>
+</li>
+<li><p>身体<code>&lt;body&gt;&lt;/body&gt;</code></p>
+</li>
+<li><p>外部JS文件引用<code>&lt;script type=&#39;te&#39;&gt;&lt;/script&gt;</code></p>
+</li>
+</ol>
+<h3 id="三条打印语句"><a href="#三条打印语句" class="headerlink" title="三条打印语句"></a><strong>三条打印语句</strong></h3><ul>
+<li><em>alert(“打印内容”)</em>:弹窗消息</li>
+<li>dcoument.wirte(“打印内容”)：在文档中显示消息</li>
+<li>console.log(“打印内容”)：在控制台打印消息</li>
+</ul>
+<h3 id="三种语句"><a href="#三种语句" class="headerlink" title="三种语句"></a>三种语句</h3><ol>
+<li><p><strong>判断语句</strong><code>if...else...</code></p>
+<ul>
+<li><p><em>语法</em>：</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+	语句<span class="token operator">...</span>
+
+<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+	语句<span class="token operator">...</span>
+
+<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+
+	语句<span class="token operator">...</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p><strong>分支语句</strong></p>
+<ul>
+<li><p><em>语法：</em></p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">switch</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">表达式</span><span class="token operator">:</span>
+        语句<span class="token operator">...</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">表达式</span><span class="token operator">:</span>
+        语句<span class="token operator">...</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">表达式</span><span class="token operator">:</span>
+        语句<span class="token operator">...</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+     <span class="token keyword">default</span> ：
+        语句<span class="token operator">...</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+     
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//tap:比较`case`和`switch`的条件表达式，满足就进入case.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p><strong>循环语句</strong></p>
+<ul>
+<li><p><em>语法：</em></p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//先判断在执行</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	语句<span class="token operator">...</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//先执行在判断</span>
+<span class="token keyword">do</span><span class="token operator">...</span><span class="token keyword">while</span><span class="token punctuation">(</span>条件语句<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    语句<span class="token operator">...</span> 
+<span class="token punctuation">&#125;</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<p><strong>break和continue的区别：</strong></p>
+<ul>
+<li><p>break是*<code>跳出</code>*整个循环，continue是<code>跳过</code>当前循环，继续执行下一个循环。</p>
+</li>
+<li><p>break和continue都只会对最近一层循环起作用，要跳出上层循环可用标签。</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//标签使用</span>
+<span class="token literal-property property">lable</span><span class="token operator">:</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+       		<span class="token keyword">continue</span> lable<span class="token punctuation">;</span> <span class="token comment">//加lable标签直接跳过上层for循环，</span>
+   		<span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><em>计时器：</em></p>
+<ul>
+<li>console.time(“标识”)：开始</li>
+<li>console.timeEnd(“标识”)：结束</li>
+</ul>
+<h3 id="对象类"><a href="#对象类" class="headerlink" title="对象类"></a>对象类</h3><ul>
+<li>对象类相当于一个塑料袋可以将其他类型，如number、string、boolean、null等封装在一起</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//创建对象</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//new关键字调用构造函数创建对像</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token comment">//使用&#123;&#125;创建对象，方便直接添加属性名和属性值</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"猪八戒"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token string">"28"</span>，
+    <span class="token literal-property property">genderb</span><span class="token operator">:</span><span class="token string">"男"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">text</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>；
+
+<span class="token comment">//添加&amp;修改属性 （对象名.属性名 = 属性值）</span>
+obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"孙悟空"</span>；
+obj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>gender <span class="token operator">=</span> <span class="token string">"男"</span>；
+
+<span class="token comment">//读取属性（对象名.属性名）</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//删除属性（delete 对象名.属性）</span>
+<span class="token keyword">delete</span> obj<span class="token punctuation">.</span>name
+
+<span class="token comment">//中括号[]读取属性名，属性名可以是任何值</span>
+obj<span class="token punctuation">[</span><span class="token string">"hair"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"黄色"</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">[</span><span class="token string">"eyes"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"蓝色"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span> <span class="token string">"hair"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//输出结果</span>
+“黄色”
+
+<span class="token comment">//属性值，属性值可以是对象，即在袋子里在套袋子</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Objrct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"猪八戒"</span>；
+obj1<span class="token punctuation">.</span>test <span class="token operator">=</span> Obj2<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>test<span class="token punctuation">.</span>nmae<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//输出结果</span>
+“猪八戒”
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a><em>in运算符</em></h3><ul>
+<li><p><code>in</code>运算符可以检查一个对象里是否含有指定属性，如果有返回true,否则返回false</p>
+</li>
+<li><p>语法：</p>
+<p>  ​	“属性名” in 对象</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"test2"</span> <span class="token keyword">in</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"name"</span> <span class="token keyword">in</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a><em><strong>函数</strong></em></h3><ul>
+<li><p>使用函数声明来创建一个函数</p>
+</li>
+<li><p>语法：</p>
+<ul>
+<li><p><em>function 函数名（形参1，形参2，…）{</em></p>
+<p>  ​		<em>语句</em>….	</p>
+<p>  ​	<em>}</em></p>
+</li>
+</ul>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>使用函数表达式创建一个函数</p>
+</li>
+<li><p>语法：</p>
+<ul>
+<li><ul>
+<li><p><em>var 函数名 &#x3D; function(形参1，形参2，…){</em></p>
+<pre><code>    语句....
+
+*&#125;*
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//将匿名函数function（）赋值给fun</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fun</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>参数说明：</p>
+<ul>
+<li>函数调用时，解析器不会检查实参类型。所有有时需要对参数类型进形检查。</li>
+<li>函数调用时，解析器不会检查实参数量，多余的参数不会被赋值。</li>
+<li>函数的实参可以是任意类型，包括对象object.</li>
+<li>如果实参数量小于形参数量，则没有实参对应的形参将是undefind.</li>
+<li>return返回值,return后的语句都不会被执行。</li>
+</ul>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//声明函数</span>
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> d <span class="token operator">=</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> d<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//调用函数</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  <strong>形参是对象类型：</strong></p>
+<p>  <em>说明：对于形参较多的情况，可以将参数封装（打包）成一个对象类型进行传递。</em></p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//定义函数</span>
+<span class="token keyword">function</span> <span class="token function">jieShao</span><span class="token punctuation">(</span><span class="token parameter">o</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我是"</span><span class="token operator">+</span>o<span class="token punctuation">.</span>name<span class="token operator">+</span><span class="token string">",今年"</span><span class="token operator">+</span>age<span class="token operator">+</span><span class="token string">",我住在"</span><span class="token operator">+</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//创建对象</span>
+<span class="token keyword">var</span> ifo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"猪八戒"</span>，
+    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token number">23</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">address</span><span class="token operator">:</span>高老庄
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//调用函数</span>
+<span class="token function">jieShao</span><span class="token punctuation">(</span>ifo<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  <strong>形参是函数类型：</strong></p>
+<p>  <em>可以在函数里面调用外部函数</em></p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//定义函数</span>
+<span class="token keyword">function</span> <span class="token function">jieShao</span><span class="token punctuation">(</span><span class="token parameter">o</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我是"</span><span class="token operator">+</span>o<span class="token punctuation">.</span>name<span class="token operator">+</span><span class="token string">",今年"</span><span class="token operator">+</span>age<span class="token operator">+</span><span class="token string">",我住在"</span><span class="token operator">+</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//创建对象</span>
+<span class="token keyword">var</span> ifo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"猪八戒"</span>，
+    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token number">23</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">address</span><span class="token operator">:</span>高老庄
+<span class="token punctuation">&#125;</span>
+
+
+ 
+<span class="token comment">//定义函数</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token function">a</span><span class="token punctuation">(</span>ifo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//调用函数</span>
+<span class="token function">fun</span><span class="token punctuation">(</span>jieshao<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  <em>立即执行函数：</em>只执行一次</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"a = "</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"b = "</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span><span class="token number">456</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//运行结果</span>
+a <span class="token operator">=</span> <span class="token number">123</span>
+b <span class="token operator">=</span> <span class="token number">456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><em>枚举对象属性</em></p>
+<ul>
+<li><p>语法：</p>
+<ul>
+<li><p><code>for(var n in obj)&#123;&#125;</code></p>
+</li>
+<li><p>循环将obj的属性赋值给n,</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"孙悟空"</span>，
+    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token string">"25"</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> n <span class="token keyword">in</span> obj<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出obj的属性名</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出属性值</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ul>
+<p><strong>作用域</strong></p>
+<ul>
+<li>作用域只一个变量的作用范围</li>
+<li>在js中有两种作用域<ol>
+<li>全局作用域<ul>
+<li>直接编写在script标签中的js代码，都在全局作用域</li>
+<li>全局作用域在页面打开时创建，在页面关闭时销毁</li>
+<li>全局作用域中有一个全局对象window，它代表浏览器窗口，它由浏览器创建我么可以直接使用</li>
+<li>在全局作用域中，创建的变量都会作为window对象的属性，创建的函数都会作为window的方法</li>
+<li>全局作用域中的变量都会是全局变量，在页面任何部分都会被访问</li>
+</ul>
+</li>
+<li>函数作用域<ul>
+<li>调用函数时创建函数作用域，函数执行完毕被销毁</li>
+<li>每调用一次就会创建一个新的函数作用域，他们之间相互独立</li>
+<li>当在函数作用域操作一个变量时，它会先在自身的作用域中寻找，如果没有继续往上一级作用域寻找。如果找到全局作用域都没有就会报错。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="工厂方式创建对象"><a href="#工厂方式创建对象" class="headerlink" title="工厂方式创建对象"></a>工厂方式创建对象</h3><p><em>该方式可以批量创建对象</em>,</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//工厂方式创建的对象都是Object类型，无法区分出不同类型的对象。</span>
+<span class="token keyword">function</span> <span class="token function">creatPerson</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>gender</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token comment">//创建一个对象</span>
+    <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//添加属性</span>
+    obj<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span>age  <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span><span class="token function-variable function">sayNmae</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token function">creatPerson</span><span class="token punctuation">(</span><span class="token string">"孙悟空"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span>；
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token function">creatPerson</span><span class="token punctuation">(</span><span class="token string">"白骨精"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">"女"</span><span class="token punctuation">)</span>；
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">,</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/***********************************************************************************/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
+<li>构造函数的执行流程<ol>
+<li>立即创建一个新的对像</li>
+<li>将新建的对象设置为函数中的this，在构造函数中可以使用this来引用新建对象</li>
+<li>逐行执行函数中的代码</li>
+<li>将新建的对象作为返回值</li>
+</ol>
+</li>
+<li>使用同一个构造函数创建的对象，我么称为同一类对象，也将一个构造函数成为一个类</li>
+<li>类命名首字母大写</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> gender</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">sayName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> mame<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">talk</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"汪汪汪"</span><span class="token punctuation">)</span>；
+    <span class="token punctuation">&#125;</span>；<span class="token comment">//公共函数，每实例化一次就开辟一个新的空间，浪费资源，通过原型模型解决</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//对象实例化</span>
+<span class="token keyword">var</span> per1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"孙悟空"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> per2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"猪八戒"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> dog <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">"旺财"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//判断dog是否时person的实例</span>
+cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dog inst<span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><em>this的情况</em></p>
+<ol>
+<li><p><em>当以函数的形式调用时，this时window</em></p>
+</li>
+<li><p><em>当以方法调用时，谁调用方法this就是谁</em></p>
+</li>
+<li><p><em>当以构造函数调用时，this就是新创建的那个对象</em></p>
+</li>
+</ol>
+<h4 id="原型模型（prototpe）"><a href="#原型模型（prototpe）" class="headerlink" title="原型模型（prototpe）"></a><strong>原型模型（prototpe）</strong></h4><p>​	我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype,这个属性对应着一个对象，这个对象就是原型对象</p>
+<ul>
+<li>如果函数作为普通函数调用prototype没有任何作用，</li>
+<li>当函数以构造函数的形式调用时，它所创建的对象都会含有一个隐含的属性，指向该构造函数的原型对象，可以通过 <code>__proto__</code>来访问该属性</li>
+<li>原型对象相当于类的一个公共空间，通过该类实例化的所有对象都可以访问该公共空间的内容</li>
+<li>当我们访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则像原型对象处找</li>
+</ul>
+<p><em>总结：在创建构造函数的时候，可以将一些对象那个共有 的属性和方法统一添加到构造函数的原型对中，这样不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了</em></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//向MyClass的原型中添加属性a</span>
+<span class="token class-name">MyClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> mc <span class="token operator">=</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> mc1 <span class="token operator">=</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+访问
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mc<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="DOM-Docment-Object-Model"><a href="#DOM-Docment-Object-Model" class="headerlink" title="DOM(Docment Object Model)"></a>DOM(Docment Object Model)</h3><p>将页面上的组成元素都看成是一个对象，通过获取对象，在对获取的对象进行操作管</p>
+<h4 id="DOM查询"><a href="#DOM查询" class="headerlink" title="DOM查询"></a>DOM查询</h4><p>通过document对象调用</p>
+<ol>
+<li><p>getElementById()  </p>
+<p>–通过<strong>id</strong>属性获取<strong>一个</strong>元素节点对象</p>
+</li>
+<li><p>getElementsByTag Name()  </p>
+<p>–通过<strong>标签名</strong>获取<strong>一组</strong>元素节点 </p>
+<p>–这个方法会返回一个类数组对象，所查询到的元素会封装到对象那个中</p>
+</li>
+<li><p>getElementsByName()</p>
+<p>–通过<strong>name</strong>属性获取<strong>一组</strong>元素节点对象</p>
+<p>–读取标签内容：元素.innerHTML</p>
+<p>–读取属性：元素.属性名</p>
+<p>–注意：</p>
+<ol>
+<li><p>读取class属性采用：元素.className  </p>
+<p>如：var box1 &#x3D; document.getElementByClassName(“box1”); </p>
+</li>
+<li><p>在document中有一个属性body，它保存的是body的引用, </p>
+<p>如:var body &#x3D; documen.body;</p>
+</li>
+<li><p>document.documentElement保存的是html跟标签</p>
+<p>如：var html &#x3D; document.documentElement;</p>
+</li>
+<li><p>document.querySelector()</p>
+<p>–需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个查询一个元素的对象节点</p>
+<p>–IE8也支持</p>
+<p>–只会选择出符合条件的第一个元素</p>
+<p>如：var div &#x3D; document.querySelector(“.box div”);</p>
+</li>
+<li><p>document.querySelectorAll</p>
+<p>–也数组的形式返回符合提条件的所有元素。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="DOM增删改"><a href="#DOM增删改" class="headerlink" title="DOM增删改"></a>DOM增删改</h4><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>city<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bj<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sh<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上海<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dj<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>东京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h5><h6 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a><em>方法一：</em></h6><ol>
+<li><p>创建节点</p>
+<ol>
+<li>document.createElement()<ul>
+<li>可以用于创建一个元素对象</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>需要一个标签名作为参数</p>
+</li>
+<li><p>将创建好的标签对象作为返回值</p>
+<p>eg: var li &#x3D; document.createElement(“li”);</p>
+</li>
+</ul>
+<ol start="2">
+<li>document.createTextBode()</li>
+</ol>
+<ul>
+<li><p>用来创建一个文本节点对象</p>
+</li>
+<li><p>需要一个文本内容作为参数，并将该内容作为返回值</p>
+</li>
+</ul>
+<pre><code>eg：var gtText = document.createTextNode(&quot;你好&quot;)
+</code></pre>
+<ol start="2">
+<li>绑定关系</li>
+</ol>
+<p>用appendChild()将gtText设置为li的子节点</p>
+<ul>
+<li><p>appendChild()</p>
+<ul>
+<li><p>usag：父节点.appendChild(子节点)</p>
+<p>eg：li.appendChild(gtText);</p>
+</li>
+<li><p>向一个父节点中添加子节点</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><em>方法二：</em></p>
+<ol>
+<li>父节点.innerHtml +&#x3D; “<li>广州<li>“ <ul>
+<li>这种方式会将子节点全部删除在添加，不建议使用</li>
+</ul>
+</li>
+</ol>
+<p><em>方法二：</em></p>
+<p>​	综合方法一和方法二</p>
+<ul>
+<li>创建一个标签：var li &#x3D; documentElement(“li”)</li>
+<li>想li中添加文本：li.innerHTML &#x3D;  “广州”</li>
+<li>将li添加到父节点city中：city.appendChild(li)</li>
+</ul>
+<h5 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h5><ol>
+<li><p>replaceChild()</p>
+<ul>
+<li><p>usag：父节点.replaceChild(新节点，旧节点)</p>
+<p>eg：city.replaceChild(li, bj);</p>
+</li>
+<li><p>可以使指定的子几点替换已有的子节点</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5><ol>
+<li><p>remove.Child()</p>
+<p>–usag1：父节点.removeChild(子节点)</p>
+<p>​       eg：city.removeChild(bj)</p>
+<p>​       删除一个子节点</p>
+<p>–usag2：子节点.parentNode.removeChild(子节点)</p>
+<p>​      eg：bj.parentNode.removeChild(bj)</p>
+<p>​	  这中方法可以不用单独获取父节点</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+github部署</title>
+    <url>/2024/02/01/hexo-github-bu-shu/</url>
+    <content><![CDATA[<h1 id="Hexo-github部署"><a href="#Hexo-github部署" class="headerlink" title="Hexo+github部署"></a>Hexo+github部署</h1><p>[toc]</p>
+<h3 id="一-环境安装"><a href="#一-环境安装" class="headerlink" title="一 环境安装"></a>一 环境安装</h3><ul>
+<li><em>安装git</em>:<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>*安装nodejs:*<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
+</ul>
+<h3 id="二-Hexo安装"><a href="#二-Hexo安装" class="headerlink" title="二 Hexo安装"></a>二 Hexo安装</h3><ul>
+<li><p>新建一个文件夹Hexo，在建一个子文件夹blog，在blog文件夹内调出git bash</p>
+</li>
+<li><pre><code class="bash">  npm install hexo-cli -g
+  hexo init
+  <pre class="line-numbers language-none"><code class="language-none">
+### 三 常用命令
+
+&#96;&#96;&#96;bash
+&#x2F;&#x2F;构建命令
+hexo g
+&#x2F;&#x2F;启动服务器
+hexo s
+&#x2F;&#x2F;推送
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+</li>
+</ul>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed <span class="token parameter variable">--save</span>                 <span class="token comment">#R SS</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git <span class="token parameter variable">--save</span>                   <span class="token comment"># git部署</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-searchdb <span class="token parameter variable">--save</span>             <span class="token comment"># 搜索</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-seo-friendly-sitemap <span class="token parameter variable">--save</span> <span class="token comment"># sitemap</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap <span class="token parameter variable">--save</span>        <span class="token comment"># 百度sitemap</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="ssh连接"><a href="#ssh连接" class="headerlink" title="ssh连接"></a>ssh连接</h3><p><em>避免每次推送都需要输入密码</em></p>
+<ul>
+<li><p>在已经安装部署插件的情况下运行命令：<code>npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>本地生成获取ssh密钥</p>
+<ul>
+<li><p>(1)生成密钥：运行命令：ssh-keygen -t rsa -C “youremail”（这里改为自己的邮箱），可能要一路回车</p>
+</li>
+<li><p>(2)获取密钥：在Git Bash运行命令cat ~&#x2F;.ssh&#x2F;id_rsa.pub，然后复制这行命令运行的结果</p>
+</li>
+</ul>
+</li>
+<li><p>github创建ssh密钥</p>
+<ul>
+<li>(1)打开<a href="http://github.com/">github</a>，在右上角的头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个都可以，把你的id_rsa.pub里面的信息复制进去，点击create&#x2F;创建即可完成创建</li>
+</ul>
+</li>
+<li><p>验证ssh连接是否成功：ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>，出现用户名，即代表访问成功</p>
+</li>
+</ul>
+<h3 id="四-推送到gitHub"><a href="#四-推送到gitHub" class="headerlink" title="四 推送到gitHub"></a>四 推送到gitHub</h3><ul>
+<li><p>注册登录github账号</p>
+</li>
+<li><p>创建一个仓库，仓库命名：用户名&#x2F;仓库名</p>
+<ul>
+<li>例如我的用户名是 “Imxiaosan”，仓库名是 “Imxiaosan.github.io”，那么地址就是：<a href="https://github.com/Imxiaosan/Imxiaosan.github.io">https://github.com/Imxiaosan/Imxiaosan.github.io</a></li>
+</ul>
+</li>
+<li><p>配置_config.yml文件</p>
+<ul>
+<li><p>在url标签里面加入仓库的页面地址，***<u>如果不设置推送之后会构建失败</u>***</p>
+</li>
+<li><p>在文件最后添加仓库推送地址</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="五-安装主题"><a href="#五-安装主题" class="headerlink" title="五 安装主题"></a>五 安装主题</h3><ol>
+<li><p>下载主题放置到themes&#x2F;文件夹下</p>
+</li>
+<li><p>更改_config.yml文件中的主题为主题文件夹的名字</p>
+<ul>
+<li><p>例如next主题</p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/theme-next/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id="六-hexo-editor安装"><a href="#六-hexo-editor安装" class="headerlink" title="六 hexo-editor安装"></a>六 hexo-editor安装</h3><ul>
+<li>hexo editor可以无账户密码登录</li>
+<li>初始账户和密码在配置文件_config.yml中</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/tajpure/hexo-editor.git
+<span class="token builtin class-name">cd</span> hexo-editor
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">--production</span>
+<span class="token function">npm</span> start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h3><p><strong>问题一：每次向仓库推送本地文件时都需要在github后台手动提交，这样会很麻烦</strong></p>
+<p><strong>解决：设置自动构建需要使用GitHub Actions，下面是一个简单的步骤：</strong></p>
+<ol>
+<li><p><strong>创建<code>.github/workflows</code>目录：</strong> 在你的GitHub仓库下创建一个名为<code>.github/workflows</code>的目录。</p>
+</li>
+<li><p><strong>在目录中添加workflow文件：</strong> 在<code>.github/workflows</code>目录中创建一个YAML文件，比如<code>build.yml</code>，并添加以下示例内容：</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy codename: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  <span class="token comment"># 这里使用你的分支名</span>
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: <span class="token number">14</span>
+
+    - name: Install Dependencies
+      run: <span class="token function">npm</span> <span class="token function">install</span>
+
+    - name: Build
+      run: <span class="token function">npm</span> run build  <span class="token comment"># 替换成你的构建命令</span>
+
+    - name: Deploy
+      run: <span class="token operator">|</span>
+        <span class="token comment"># 在这里添加你的部署命令</span>
+        <span class="token comment"># 比如上传到服务器、部署到GitHub Pages等</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> 这是一个基本的Node.js项目的构建和部署示例，确保根据你的项目需要进行调整。</p>
+</li>
+<li><p><strong>提交并推送更改：</strong> 将这个workflow文件提交到你的GitHub仓库，并推送到相应的分支。</p>
+</li>
+<li><p><strong>触发构建：</strong> 一旦推送到指定的分支，GitHub Actions会自动触发构建和部署。</p>
+</li>
+</ol>
+<p><strong>部署目标具体步骤示例：</strong></p>
+<ol>
+<li><p><strong>上传到服务器：</strong> 如果你的应用托管在远程服务器上，你可能需要使用 SCP 或 rsync 等工具将构建后的文件上传到服务器。</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy code- name: Deploy to Server
+  run: <span class="token function">scp</span> <span class="token parameter variable">-r</span> ./dist/* username@your-server-ip:/path/to/destination/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>部署到云服务：</strong> 如果你使用云服务，你可能需要使用相应云服务的CLI或API来部署。</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy code- name: Deploy to AWS S3
+  run: aws s3 <span class="token function">sync</span> ./dist s3://your-s3-bucket/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>GitHub Pages：</strong> 如果你使用 GitHub Pages，你可能需要将构建后的文件推送到 <code>gh-pages</code> 分支。</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy code- name: Deploy to GitHub Pages
+  run: <span class="token operator">|</span>
+    <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> gh-pages
+    <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+    <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Deploy to GitHub Pages"</span>
+    <span class="token function">git</span> push origin gh-pages<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>切换到 <code>gh-pages</code> 分支。</p>
+</li>
+<li><p>将所有文件添加到暂存区。</p>
+</li>
+<li><p>提交更改并添加一条提交信息。</p>
+</li>
+<li><p>将更改推送到远程仓库的 <code>gh-pages</code> 分支。</p>
+</li>
+</ol>
+<p>请确保在运行这个命令之前，你的构建脚本已经生成了需要发布到 GitHub Pages 的静态文件，并且这些文件在项目的根目录下。</p>
+<p>问题二：在向github推送时报错：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Author identity unknown
+
+*** Please tell me <span class="token function">who</span> you are.
+
+Run
+
+  <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"you@example.com"</span>
+  <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
+
+to <span class="token builtin class-name">set</span> your account<span class="token string">'s default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got '</span>Y@DESKTOP-IVT88AH.<span class="token punctuation">(</span>none<span class="token punctuation">)</span>'<span class="token punctuation">)</span>
+error: src refspec HEAD does not match any
+error: failed to push some refs to <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"you@example.com"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>请确保将 “<a href="mailto:&#121;&#111;&#117;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#121;&#111;&#117;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a>“ 替换为你在GitHub上注册的邮箱地址，”Your Name” 替换为你的GitHub用户名。</p>
+<p>如果你只想在当前仓库中设置身份，可以去掉 <code>--global</code> 选项：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config user.email <span class="token string">"you@example.com"</span>
+<span class="token function">git</span> config user.name <span class="token string">"Your Name"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>设置完成后，再次运行Hexo的部署命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样就应该能够成功推送到GitHub了。如果仍然有问题，请确保你的Hexo配置文件中的 <code>deploy</code> 部分配置正确，并且你有写入权限到对应的GitHub仓库。</p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux笔记</title>
     <url>/2024/02/01/linux-xue-xi-bi-ji/</url>
     <content><![CDATA[<h1 id="Linux学习笔记"><a href="#Linux学习笔记" class="headerlink" title="Linux学习笔记"></a>Linux学习笔记</h1><p>[toc]</p>
@@ -803,709 +1503,8 @@ vim 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
         <category>Markdown</category>
       </categories>
       <tags>
-        <tag>Typora</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+github部署</title>
-    <url>/2024/02/01/hexo-github-bu-shu/</url>
-    <content><![CDATA[<h1 id="Hexo-github部署"><a href="#Hexo-github部署" class="headerlink" title="Hexo+github部署"></a>Hexo+github部署</h1><p>[toc]</p>
-<h3 id="一-环境安装"><a href="#一-环境安装" class="headerlink" title="一 环境安装"></a>一 环境安装</h3><ul>
-<li><em>安装git</em>:<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
-<li>*安装nodejs:*<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
-</ul>
-<h3 id="二-Hexo安装"><a href="#二-Hexo安装" class="headerlink" title="二 Hexo安装"></a>二 Hexo安装</h3><ul>
-<li><p>新建一个文件夹Hexo，在建一个子文件夹blog，在blog文件夹内调出git bash</p>
-</li>
-<li><pre><code class="bash">  npm install hexo-cli -g
-  hexo init
-  <pre class="line-numbers language-none"><code class="language-none">
-### 三 常用命令
-
-&#96;&#96;&#96;bash
-&#x2F;&#x2F;构建命令
-hexo g
-&#x2F;&#x2F;启动服务器
-hexo s
-&#x2F;&#x2F;推送
-hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</code></pre>
-</li>
-</ul>
-<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed <span class="token parameter variable">--save</span>                 <span class="token comment">#R SS</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git <span class="token parameter variable">--save</span>                   <span class="token comment"># git部署</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-searchdb <span class="token parameter variable">--save</span>             <span class="token comment"># 搜索</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-seo-friendly-sitemap <span class="token parameter variable">--save</span> <span class="token comment"># sitemap</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap <span class="token parameter variable">--save</span>        <span class="token comment"># 百度sitemap</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="ssh连接"><a href="#ssh连接" class="headerlink" title="ssh连接"></a>ssh连接</h3><p><em>避免每次推送都需要输入密码</em></p>
-<ul>
-<li><p>在已经安装部署插件的情况下运行命令：<code>npm install hexo-deployer-git --save</code></p>
-</li>
-<li><p>本地生成获取ssh密钥</p>
-<ul>
-<li><p>(1)生成密钥：运行命令：ssh-keygen -t rsa -C “youremail”（这里改为自己的邮箱），可能要一路回车</p>
-</li>
-<li><p>(2)获取密钥：在Git Bash运行命令cat ~&#x2F;.ssh&#x2F;id_rsa.pub，然后复制这行命令运行的结果</p>
-</li>
-</ul>
-</li>
-<li><p>github创建ssh密钥</p>
-<ul>
-<li>(1)打开<a href="http://github.com/">github</a>，在右上角的头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个都可以，把你的id_rsa.pub里面的信息复制进去，点击create&#x2F;创建即可完成创建</li>
-</ul>
-</li>
-<li><p>验证ssh连接是否成功：ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;</a>，出现用户名，即代表访问成功</p>
-</li>
-</ul>
-<h3 id="四-推送到gitHub"><a href="#四-推送到gitHub" class="headerlink" title="四 推送到gitHub"></a>四 推送到gitHub</h3><ul>
-<li><p>注册登录github账号</p>
-</li>
-<li><p>创建一个仓库，仓库命名：用户名&#x2F;仓库名</p>
-<ul>
-<li>例如我的用户名是 “Imxiaosan”，仓库名是 “Imxiaosan.github.io”，那么地址就是：<a href="https://github.com/Imxiaosan/Imxiaosan.github.io">https://github.com/Imxiaosan/Imxiaosan.github.io</a></li>
-</ul>
-</li>
-<li><p>配置_config.yml文件</p>
-<ul>
-<li><p>在url标签里面加入仓库的页面地址，***<u>如果不设置推送之后会构建失败</u>***</p>
-</li>
-<li><p>在文件最后添加仓库推送地址</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="五-安装主题"><a href="#五-安装主题" class="headerlink" title="五 安装主题"></a>五 安装主题</h3><ol>
-<li><p>下载主题放置到themes&#x2F;文件夹下</p>
-</li>
-<li><p>更改_config.yml文件中的主题为主题文件夹的名字</p>
-<ul>
-<li><p>例如next主题</p>
-  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/theme-next/hexo-theme-next themes/next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-</li>
-</ol>
-<h3 id="六-hexo-editor安装"><a href="#六-hexo-editor安装" class="headerlink" title="六 hexo-editor安装"></a>六 hexo-editor安装</h3><ul>
-<li>hexo editor可以无账户密码登录</li>
-<li>初始账户和密码在配置文件_config.yml中</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/tajpure/hexo-editor.git
-<span class="token builtin class-name">cd</span> hexo-editor
-<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">--production</span>
-<span class="token function">npm</span> start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h3><p><strong>问题一：每次向仓库推送本地文件时都需要在github后台手动提交，这样会很麻烦</strong></p>
-<p><strong>解决：设置自动构建需要使用GitHub Actions，下面是一个简单的步骤：</strong></p>
-<ol>
-<li><p><strong>创建<code>.github/workflows</code>目录：</strong> 在你的GitHub仓库下创建一个名为<code>.github/workflows</code>的目录。</p>
-</li>
-<li><p><strong>在目录中添加workflow文件：</strong> 在<code>.github/workflows</code>目录中创建一个YAML文件，比如<code>build.yml</code>，并添加以下示例内容：</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy codename: Build and Deploy
-
-on:
-  push:
-    branches:
-      - main  <span class="token comment"># 这里使用你的分支名</span>
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: <span class="token number">14</span>
-
-    - name: Install Dependencies
-      run: <span class="token function">npm</span> <span class="token function">install</span>
-
-    - name: Build
-      run: <span class="token function">npm</span> run build  <span class="token comment"># 替换成你的构建命令</span>
-
-    - name: Deploy
-      run: <span class="token operator">|</span>
-        <span class="token comment"># 在这里添加你的部署命令</span>
-        <span class="token comment"># 比如上传到服务器、部署到GitHub Pages等</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p> 这是一个基本的Node.js项目的构建和部署示例，确保根据你的项目需要进行调整。</p>
-</li>
-<li><p><strong>提交并推送更改：</strong> 将这个workflow文件提交到你的GitHub仓库，并推送到相应的分支。</p>
-</li>
-<li><p><strong>触发构建：</strong> 一旦推送到指定的分支，GitHub Actions会自动触发构建和部署。</p>
-</li>
-</ol>
-<p><strong>部署目标具体步骤示例：</strong></p>
-<ol>
-<li><p><strong>上传到服务器：</strong> 如果你的应用托管在远程服务器上，你可能需要使用 SCP 或 rsync 等工具将构建后的文件上传到服务器。</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy code- name: Deploy to Server
-  run: <span class="token function">scp</span> <span class="token parameter variable">-r</span> ./dist/* username@your-server-ip:/path/to/destination/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p><strong>部署到云服务：</strong> 如果你使用云服务，你可能需要使用相应云服务的CLI或API来部署。</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy code- name: Deploy to AWS S3
-  run: aws s3 <span class="token function">sync</span> ./dist s3://your-s3-bucket/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p><strong>GitHub Pages：</strong> 如果你使用 GitHub Pages，你可能需要将构建后的文件推送到 <code>gh-pages</code> 分支。</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yamlCopy code- name: Deploy to GitHub Pages
-  run: <span class="token operator">|</span>
-    <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> gh-pages
-    <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
-    <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Deploy to GitHub Pages"</span>
-    <span class="token function">git</span> push origin gh-pages<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>切换到 <code>gh-pages</code> 分支。</p>
-</li>
-<li><p>将所有文件添加到暂存区。</p>
-</li>
-<li><p>提交更改并添加一条提交信息。</p>
-</li>
-<li><p>将更改推送到远程仓库的 <code>gh-pages</code> 分支。</p>
-</li>
-</ol>
-<p>请确保在运行这个命令之前，你的构建脚本已经生成了需要发布到 GitHub Pages 的静态文件，并且这些文件在项目的根目录下。</p>
-<p>问题二：在向github推送时报错：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Author identity unknown
-
-*** Please tell me <span class="token function">who</span> you are.
-
-Run
-
-  <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"you@example.com"</span>
-  <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
-
-to <span class="token builtin class-name">set</span> your account<span class="token string">'s default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got '</span>Y@DESKTOP-IVT88AH.<span class="token punctuation">(</span>none<span class="token punctuation">)</span>'<span class="token punctuation">)</span>
-error: src refspec HEAD does not match any
-error: failed to push some refs to <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>解决：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"you@example.com"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>请确保将 “<a href="mailto:&#x79;&#x6f;&#117;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#x6f;&#117;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;</a>“ 替换为你在GitHub上注册的邮箱地址，”Your Name” 替换为你的GitHub用户名。</p>
-<p>如果你只想在当前仓库中设置身份，可以去掉 <code>--global</code> 选项：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config user.email <span class="token string">"you@example.com"</span>
-<span class="token function">git</span> config user.name <span class="token string">"Your Name"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>设置完成后，再次运行Hexo的部署命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>这样就应该能够成功推送到GitHub了。如果仍然有问题，请确保你的Hexo配置文件中的 <code>deploy</code> 部分配置正确，并且你有写入权限到对应的GitHub仓库。</p>
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Typora</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript初学</title>
-    <url>/2024/02/01/javascript/</url>
-    <content><![CDATA[<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a><strong>位置</strong></h3><ol>
-<li><p>位于头部<code>&lt;head&gt;&lt;/head&gt;</code></p>
-</li>
-<li><p>身体<code>&lt;body&gt;&lt;/body&gt;</code></p>
-</li>
-<li><p>外部JS文件引用<code>&lt;script type=&#39;te&#39;&gt;&lt;/script&gt;</code></p>
-</li>
-</ol>
-<h3 id="三条打印语句"><a href="#三条打印语句" class="headerlink" title="三条打印语句"></a><strong>三条打印语句</strong></h3><ul>
-<li><em>alert(“打印内容”)</em>:弹窗消息</li>
-<li>dcoument.wirte(“打印内容”)：在文档中显示消息</li>
-<li>console.log(“打印内容”)：在控制台打印消息</li>
-</ul>
-<h3 id="三种语句"><a href="#三种语句" class="headerlink" title="三种语句"></a>三种语句</h3><ol>
-<li><p><strong>判断语句</strong><code>if...else...</code></p>
-<ul>
-<li><p><em>语法</em>：</p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-
-	语句<span class="token operator">...</span>
-
-<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-
-	语句<span class="token operator">...</span>
-
-<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-
-	语句<span class="token operator">...</span>
-
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-<li><p><strong>分支语句</strong></p>
-<ul>
-<li><p><em>语法：</em></p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">switch</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">case</span> <span class="token literal-property property">表达式</span><span class="token operator">:</span>
-        语句<span class="token operator">...</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> <span class="token literal-property property">表达式</span><span class="token operator">:</span>
-        语句<span class="token operator">...</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> <span class="token literal-property property">表达式</span><span class="token operator">:</span>
-        语句<span class="token operator">...</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-     <span class="token keyword">default</span> ：
-        语句<span class="token operator">...</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-     
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//tap:比较`case`和`switch`的条件表达式，满足就进入case.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-<li><p><strong>循环语句</strong></p>
-<ul>
-<li><p><em>语法：</em></p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//先判断在执行</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	语句<span class="token operator">...</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//先执行在判断</span>
-<span class="token keyword">do</span><span class="token operator">...</span><span class="token keyword">while</span><span class="token punctuation">(</span>条件语句<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    语句<span class="token operator">...</span> 
-<span class="token punctuation">&#125;</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-</ol>
-<p><strong>break和continue的区别：</strong></p>
-<ul>
-<li><p>break是*<code>跳出</code>*整个循环，continue是<code>跳过</code>当前循环，继续执行下一个循环。</p>
-</li>
-<li><p>break和continue都只会对最近一层循环起作用，要跳出上层循环可用标签。</p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//标签使用</span>
-<span class="token literal-property property">lable</span><span class="token operator">:</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-       		<span class="token keyword">continue</span> lable<span class="token punctuation">;</span> <span class="token comment">//加lable标签直接跳过上层for循环，</span>
-   		<span class="token punctuation">&#125;</span>
-   <span class="token punctuation">&#125;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<p><em>计时器：</em></p>
-<ul>
-<li>console.time(“标识”)：开始</li>
-<li>console.timeEnd(“标识”)：结束</li>
-</ul>
-<h3 id="对象类"><a href="#对象类" class="headerlink" title="对象类"></a>对象类</h3><ul>
-<li>对象类相当于一个塑料袋可以将其他类型，如number、string、boolean、null等封装在一起</li>
-</ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//创建对象</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//new关键字调用构造函数创建对像</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token comment">//使用&#123;&#125;创建对象，方便直接添加属性名和属性值</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"猪八戒"</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token string">"28"</span>，
-    <span class="token literal-property property">genderb</span><span class="token operator">:</span><span class="token string">"男"</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">text</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>；
-
-<span class="token comment">//添加&amp;修改属性 （对象名.属性名 = 属性值）</span>
-obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"孙悟空"</span>；
-obj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
-obj<span class="token punctuation">.</span>gender <span class="token operator">=</span> <span class="token string">"男"</span>；
-
-<span class="token comment">//读取属性（对象名.属性名）</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">//删除属性（delete 对象名.属性）</span>
-<span class="token keyword">delete</span> obj<span class="token punctuation">.</span>name
-
-<span class="token comment">//中括号[]读取属性名，属性名可以是任何值</span>
-obj<span class="token punctuation">[</span><span class="token string">"hair"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"黄色"</span><span class="token punctuation">;</span>
-obj<span class="token punctuation">[</span><span class="token string">"eyes"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"蓝色"</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> n<span class="token operator">=</span> <span class="token string">"hair"</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出结果</span>
-“黄色”
-
-<span class="token comment">//属性值，属性值可以是对象，即在袋子里在套袋子</span>
-<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Objrct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-obj2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"猪八戒"</span>；
-obj1<span class="token punctuation">.</span>test <span class="token operator">=</span> Obj2<span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>test<span class="token punctuation">.</span>nmae<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出结果</span>
-“猪八戒”
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a><em>in运算符</em></h3><ul>
-<li><p><code>in</code>运算符可以检查一个对象里是否含有指定属性，如果有返回true,否则返回false</p>
-</li>
-<li><p>语法：</p>
-<p>  ​	“属性名” in 对象</p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"test2"</span> <span class="token keyword">in</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"name"</span> <span class="token keyword">in</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ul>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a><em><strong>函数</strong></em></h3><ul>
-<li><p>使用函数声明来创建一个函数</p>
-</li>
-<li><p>语法：</p>
-<ul>
-<li><p><em>function 函数名（形参1，形参2，…）{</em></p>
-<p>  ​		<em>语句</em>….	</p>
-<p>  ​	<em>}</em></p>
-</li>
-</ul>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>使用函数表达式创建一个函数</p>
-</li>
-<li><p>语法：</p>
-<ul>
-<li><ul>
-<li><p><em>var 函数名 &#x3D; function(形参1，形参2，…){</em></p>
-<pre><code>    语句....
-
-*&#125;*
-
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//将匿名函数function（）赋值给fun</span>
-<span class="token keyword">var</span> <span class="token function-variable function">fun</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>参数说明：</p>
-<ul>
-<li>函数调用时，解析器不会检查实参类型。所有有时需要对参数类型进形检查。</li>
-<li>函数调用时，解析器不会检查实参数量，多余的参数不会被赋值。</li>
-<li>函数的实参可以是任意类型，包括对象object.</li>
-<li>如果实参数量小于形参数量，则没有实参对应的形参将是undefind.</li>
-<li>return返回值,return后的语句都不会被执行。</li>
-</ul>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//声明函数</span>
-<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> d <span class="token operator">=</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> d<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//调用函数</span>
-<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>  <strong>形参是对象类型：</strong></p>
-<p>  <em>说明：对于形参较多的情况，可以将参数封装（打包）成一个对象类型进行传递。</em></p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//定义函数</span>
-<span class="token keyword">function</span> <span class="token function">jieShao</span><span class="token punctuation">(</span><span class="token parameter">o</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我是"</span><span class="token operator">+</span>o<span class="token punctuation">.</span>name<span class="token operator">+</span><span class="token string">",今年"</span><span class="token operator">+</span>age<span class="token operator">+</span><span class="token string">",我住在"</span><span class="token operator">+</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//创建对象</span>
-<span class="token keyword">var</span> ifo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"猪八戒"</span>，
-    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token number">23</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">address</span><span class="token operator">:</span>高老庄
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//调用函数</span>
-<span class="token function">jieShao</span><span class="token punctuation">(</span>ifo<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>  <strong>形参是函数类型：</strong></p>
-<p>  <em>可以在函数里面调用外部函数</em></p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//定义函数</span>
-<span class="token keyword">function</span> <span class="token function">jieShao</span><span class="token punctuation">(</span><span class="token parameter">o</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我是"</span><span class="token operator">+</span>o<span class="token punctuation">.</span>name<span class="token operator">+</span><span class="token string">",今年"</span><span class="token operator">+</span>age<span class="token operator">+</span><span class="token string">",我住在"</span><span class="token operator">+</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//创建对象</span>
-<span class="token keyword">var</span> ifo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"猪八戒"</span>，
-    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token number">23</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">address</span><span class="token operator">:</span>高老庄
-<span class="token punctuation">&#125;</span>
-
-
- 
-<span class="token comment">//定义函数</span>
-<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token function">a</span><span class="token punctuation">(</span>ifo<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//调用函数</span>
-<span class="token function">fun</span><span class="token punctuation">(</span>jieshao<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>  <em>立即执行函数：</em>只执行一次</p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"a = "</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"b = "</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span><span class="token number">456</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//运行结果</span>
-a <span class="token operator">=</span> <span class="token number">123</span>
-b <span class="token operator">=</span> <span class="token number">456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<p><em>枚举对象属性</em></p>
-<ul>
-<li><p>语法：</p>
-<ul>
-<li><p><code>for(var n in obj)&#123;&#125;</code></p>
-</li>
-<li><p>循环将obj的属性赋值给n,</p>
-  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"孙悟空"</span>，
-    <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token string">"25"</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> n <span class="token keyword">in</span> obj<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出obj的属性名</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出属性值</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-</ul>
-<p><strong>作用域</strong></p>
-<ul>
-<li>作用域只一个变量的作用范围</li>
-<li>在js中有两种作用域<ol>
-<li>全局作用域<ul>
-<li>直接编写在script标签中的js代码，都在全局作用域</li>
-<li>全局作用域在页面打开时创建，在页面关闭时销毁</li>
-<li>全局作用域中有一个全局对象window，它代表浏览器窗口，它由浏览器创建我么可以直接使用</li>
-<li>在全局作用域中，创建的变量都会作为window对象的属性，创建的函数都会作为window的方法</li>
-<li>全局作用域中的变量都会是全局变量，在页面任何部分都会被访问</li>
-</ul>
-</li>
-<li>函数作用域<ul>
-<li>调用函数时创建函数作用域，函数执行完毕被销毁</li>
-<li>每调用一次就会创建一个新的函数作用域，他们之间相互独立</li>
-<li>当在函数作用域操作一个变量时，它会先在自身的作用域中寻找，如果没有继续往上一级作用域寻找。如果找到全局作用域都没有就会报错。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="工厂方式创建对象"><a href="#工厂方式创建对象" class="headerlink" title="工厂方式创建对象"></a>工厂方式创建对象</h3><p><em>该方式可以批量创建对象</em>,</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//工厂方式创建的对象都是Object类型，无法区分出不同类型的对象。</span>
-<span class="token keyword">function</span> <span class="token function">creatPerson</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>gender</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token comment">//创建一个对象</span>
-    <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">//添加属性</span>
-    obj<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    obj<span class="token punctuation">.</span>age  <span class="token operator">=</span> age<span class="token punctuation">;</span>
-    obj<span class="token punctuation">.</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
-    obj<span class="token punctuation">.</span><span class="token function-variable function">sayNmae</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token function">creatPerson</span><span class="token punctuation">(</span><span class="token string">"孙悟空"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span>；
-<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token function">creatPerson</span><span class="token punctuation">(</span><span class="token string">"白骨精"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">"女"</span><span class="token punctuation">)</span>；
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">,</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">/***********************************************************************************/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
-<li>构造函数的执行流程<ol>
-<li>立即创建一个新的对像</li>
-<li>将新建的对象设置为函数中的this，在构造函数中可以使用this来引用新建对象</li>
-<li>逐行执行函数中的代码</li>
-<li>将新建的对象作为返回值</li>
-</ol>
-</li>
-<li>使用同一个构造函数创建的对象，我么称为同一类对象，也将一个构造函数成为一个类</li>
-<li>类命名首字母大写</li>
-</ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> gender</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">sayName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> mame<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">talk</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"汪汪汪"</span><span class="token punctuation">)</span>；
-    <span class="token punctuation">&#125;</span>；<span class="token comment">//公共函数，每实例化一次就开辟一个新的空间，浪费资源，通过原型模型解决</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">//对象实例化</span>
-<span class="token keyword">var</span> per1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"孙悟空"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> per2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"猪八戒"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">var</span> dog <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">"旺财"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//判断dog是否时person的实例</span>
-cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dog inst<span class="token punctuation">)</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><em>this的情况</em></p>
-<ol>
-<li><p><em>当以函数的形式调用时，this时window</em></p>
-</li>
-<li><p><em>当以方法调用时，谁调用方法this就是谁</em></p>
-</li>
-<li><p><em>当以构造函数调用时，this就是新创建的那个对象</em></p>
-</li>
-</ol>
-<h4 id="原型模型（prototpe）"><a href="#原型模型（prototpe）" class="headerlink" title="原型模型（prototpe）"></a><strong>原型模型（prototpe）</strong></h4><p>​	我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype,这个属性对应着一个对象，这个对象就是原型对象</p>
-<ul>
-<li>如果函数作为普通函数调用prototype没有任何作用，</li>
-<li>当函数以构造函数的形式调用时，它所创建的对象都会含有一个隐含的属性，指向该构造函数的原型对象，可以通过 <code>__proto__</code>来访问该属性</li>
-<li>原型对象相当于类的一个公共空间，通过该类实例化的所有对象都可以访问该公共空间的内容</li>
-<li>当我们访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则像原型对象处找</li>
-</ul>
-<p><em>总结：在创建构造函数的时候，可以将一些对象那个共有 的属性和方法统一添加到构造函数的原型对中，这样不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了</em></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//向MyClass的原型中添加属性a</span>
-<span class="token class-name">MyClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> mc <span class="token operator">=</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> mc1 <span class="token operator">=</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-访问
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mc<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="DOM-Docment-Object-Model"><a href="#DOM-Docment-Object-Model" class="headerlink" title="DOM(Docment Object Model)"></a>DOM(Docment Object Model)</h3><p>将页面上的组成元素都看成是一个对象，通过获取对象，在对获取的对象进行操作管</p>
-<h4 id="DOM查询"><a href="#DOM查询" class="headerlink" title="DOM查询"></a>DOM查询</h4><p>通过document对象调用</p>
-<ol>
-<li><p>getElementById()  </p>
-<p>–通过<strong>id</strong>属性获取<strong>一个</strong>元素节点对象</p>
-</li>
-<li><p>getElementsByTag Name()  </p>
-<p>–通过<strong>标签名</strong>获取<strong>一组</strong>元素节点 </p>
-<p>–这个方法会返回一个类数组对象，所查询到的元素会封装到对象那个中</p>
-</li>
-<li><p>getElementsByName()</p>
-<p>–通过<strong>name</strong>属性获取<strong>一组</strong>元素节点对象</p>
-<p>–读取标签内容：元素.innerHTML</p>
-<p>–读取属性：元素.属性名</p>
-<p>–注意：</p>
-<ol>
-<li><p>读取class属性采用：元素.className  </p>
-<p>如：var box1 &#x3D; document.getElementByClassName(“box1”); </p>
-</li>
-<li><p>在document中有一个属性body，它保存的是body的引用, </p>
-<p>如:var body &#x3D; documen.body;</p>
-</li>
-<li><p>document.documentElement保存的是html跟标签</p>
-<p>如：var html &#x3D; document.documentElement;</p>
-</li>
-<li><p>document.querySelector()</p>
-<p>–需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个查询一个元素的对象节点</p>
-<p>–IE8也支持</p>
-<p>–只会选择出符合条件的第一个元素</p>
-<p>如：var div &#x3D; document.querySelector(“.box div”);</p>
-</li>
-<li><p>document.querySelectorAll</p>
-<p>–也数组的形式返回符合提条件的所有元素。</p>
-</li>
-</ol>
-</li>
-</ol>
-<h4 id="DOM增删改"><a href="#DOM增删改" class="headerlink" title="DOM增删改"></a>DOM增删改</h4><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>city<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bj<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sh<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上海<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dj<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>东京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h5><h6 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a><em>方法一：</em></h6><ol>
-<li><p>创建节点</p>
-<ol>
-<li>document.createElement()<ul>
-<li>可以用于创建一个元素对象</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>需要一个标签名作为参数</p>
-</li>
-<li><p>将创建好的标签对象作为返回值</p>
-<p>eg: var li &#x3D; document.createElement(“li”);</p>
-</li>
-</ul>
-<ol start="2">
-<li>document.createTextBode()</li>
-</ol>
-<ul>
-<li><p>用来创建一个文本节点对象</p>
-</li>
-<li><p>需要一个文本内容作为参数，并将该内容作为返回值</p>
-</li>
-</ul>
-<pre><code>eg：var gtText = document.createTextNode(&quot;你好&quot;)
-</code></pre>
-<ol start="2">
-<li>绑定关系</li>
-</ol>
-<p>用appendChild()将gtText设置为li的子节点</p>
-<ul>
-<li><p>appendChild()</p>
-<ul>
-<li><p>usag：父节点.appendChild(子节点)</p>
-<p>eg：li.appendChild(gtText);</p>
-</li>
-<li><p>向一个父节点中添加子节点</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p><em>方法二：</em></p>
-<ol>
-<li>父节点.innerHtml +&#x3D; “<li>广州<li>“ <ul>
-<li>这种方式会将子节点全部删除在添加，不建议使用</li>
-</ul>
-</li>
-</ol>
-<p><em>方法二：</em></p>
-<p>​	综合方法一和方法二</p>
-<ul>
-<li>创建一个标签：var li &#x3D; documentElement(“li”)</li>
-<li>想li中添加文本：li.innerHTML &#x3D;  “广州”</li>
-<li>将li添加到父节点city中：city.appendChild(li)</li>
-</ul>
-<h5 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h5><ol>
-<li><p>replaceChild()</p>
-<ul>
-<li><p>usag：父节点.replaceChild(新节点，旧节点)</p>
-<p>eg：city.replaceChild(li, bj);</p>
-</li>
-<li><p>可以使指定的子几点替换已有的子节点</p>
-</li>
-</ul>
-</li>
-</ol>
-<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5><ol>
-<li><p>remove.Child()</p>
-<p>–usag1：父节点.removeChild(子节点)</p>
-<p>​       eg：city.removeChild(bj)</p>
-<p>​       删除一个子节点</p>
-<p>–usag2：子节点.parentNode.removeChild(子节点)</p>
-<p>​      eg：bj.parentNode.removeChild(bj)</p>
-<p>​	  这中方法可以不用单独获取父节点</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Typora</tag>
-        <tag>Markdown</tag>
+        <tag>Linux</tag>
+        <tag>vims</tag>
       </tags>
   </entry>
   <entry>
@@ -1872,26 +1871,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES<span aria
         <category>Markdown</category>
       </categories>
       <tags>
-        <tag>Typora</tag>
-        <tag>Markdown</tag>
+        <tag>docker</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/01/21/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>

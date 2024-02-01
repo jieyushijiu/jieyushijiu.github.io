@@ -3,15 +3,43 @@
 
 
     <url>
-        <loc>http://jieyushijiu.github.io/tags/Markdown/</loc>
-        <lastmod>2024-02-01T13:19:03.625Z</lastmod>
+        <loc>http://jieyushijiu.github.io/tags/vims/</loc>
+        <lastmod>2024-02-01T13:23:18.504Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://jieyushijiu.github.io/tags/Typora/</loc>
-        <lastmod>2024-02-01T13:19:03.625Z</lastmod>
+        <loc>http://jieyushijiu.github.io/tags/Linux/</loc>
+        <lastmod>2024-02-01T13:23:18.504Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jieyushijiu.github.io/tags/JavaScript/</loc>
+        <lastmod>2024-02-01T13:22:56.663Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jieyushijiu.github.io/tags/github/</loc>
+        <lastmod>2024-02-01T13:22:44.221Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jieyushijiu.github.io/tags/hexo/</loc>
+        <lastmod>2024-02-01T13:22:44.221Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jieyushijiu.github.io/tags/docker/</loc>
+        <lastmod>2024-02-01T13:22:11.661Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
