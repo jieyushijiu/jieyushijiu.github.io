@@ -1,0 +1,2167 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Linux笔记, 十九">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Linux笔记 | 十九</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="十九" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    
+    <div id="loading-box">
+      <div class="loading-left-bg"></div>
+      <div class="loading-right-bg"></div>
+      <div class="spinner-box">
+        <div class="configure-border-1">
+          <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+          <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+      </div>
+    </div>
+    <!-- 页面加载动画 -->
+    <script>
+      $(document).ready(function () {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+      })
+    </script>
+  
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">十九</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">十九</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Linux笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-02-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-02-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.6k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Linux学习笔记"><a href="#Linux学习笔记" class="headerlink" title="Linux学习笔记"></a>Linux学习笔记</h1><p>[toc]</p>
+<p><img src="C:\Users\Y\AppData\Roaming\Typora\typora-user-images\image-20231209150758178.png" alt="image-20231209150758178"></p>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><p><img src="https://www.runoob.com/wp-content/uploads/2014/06/d0c50-linux2bfile2bsystem2bhierarchy.jpg" alt="img"></p>
+<ul>
+<li><p><strong>&#x2F;bin</strong>：<br>  bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
+</li>
+<li><p><strong>&#x2F;boot：</strong><br>  这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+</li>
+<li><p><strong>&#x2F;dev ：</strong><br>  dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
+</li>
+<li><p><strong>&#x2F;etc：</strong><br>  etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+</li>
+<li><p><strong>&#x2F;home</strong>：<br>  用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
+</li>
+<li><p><strong>&#x2F;lib</strong>：<br>  lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li><p><strong>&#x2F;lost+found</strong>：<br>  这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+</li>
+<li><p><strong>&#x2F;media</strong>：<br>  linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
+</li>
+<li><p><strong>&#x2F;mnt</strong>：<br>  系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 &#x2F;mnt&#x2F; 上，然后进入该目录就可以查看光驱里的内容了。</p>
+</li>
+<li><p><strong>&#x2F;opt</strong>：<br>  opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+</li>
+<li><p><strong>&#x2F;proc</strong>：<br>  proc 是 Processes(进程) 的缩写，&#x2F;proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>  这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+  <pre class="line-numbers language-none"><code class="language-none">echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;icmp_echo_ignore_all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>&#x2F;root</strong>：<br>  该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+</li>
+<li><p><strong>&#x2F;sbin</strong>：<br>  s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
+</li>
+<li><p><strong>&#x2F;selinux</strong>：<br>   这个目录是 Redhat&#x2F;CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+</li>
+<li><p><strong>&#x2F;srv</strong>：<br>   该目录存放一些服务启动之后需要提取的数据。</p>
+</li>
+<li><p><strong>&#x2F;sys</strong>：</p>
+<p>  这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。</p>
+<p>  sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。</p>
+<p>  该文件系统是内核设备树的一个直观反映。</p>
+<p>  当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
+</li>
+<li><p><strong>&#x2F;tmp</strong>：<br>  tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
+</li>
+<li><p><strong>&#x2F;usr</strong>：<br>   usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
+</li>
+<li><p><strong>&#x2F;usr&#x2F;bin：</strong><br>  系统用户使用的应用程序。</p>
+</li>
+<li><p><strong>&#x2F;usr&#x2F;sbin：</strong><br>  超级用户使用的比较高级的管理程序和系统守护程序。</p>
+</li>
+<li><p><strong>&#x2F;usr&#x2F;src：</strong><br>  内核源代码默认的放置目录。</p>
+</li>
+<li><p><strong>&#x2F;var</strong>：<br>  var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+</li>
+<li><p><strong>&#x2F;run</strong>：<br>  是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 &#x2F;var&#x2F;run 目录，应该让它指向 run。</p>
+</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li><p><strong>ls (list)</strong></p>
+<ul>
+<li><em>作用</em>：列出目录内容。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-l</code>：以长格式显示详细信息。</li>
+<li><code>-a</code>：显示所有文件，包括以<code>.</code>开头的隐藏文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>cd (change directory)</strong></p>
+<ul>
+<li><em>作用</em>：改变当前工作目录。</li>
+<li><em>参数</em>：目标目录的路径。</li>
+</ul>
+</li>
+<li><p><strong>cp (copy)</strong></p>
+<ul>
+<li><em>作用</em>：复制文件或目录。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-r</code>：递归地复制目录及其内容。</li>
+<li><code>-i</code>：在覆盖文件之前进行提示。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>mv (move)</strong></p>
+<ul>
+<li><em>作用</em>：移动文件或目录，也可用于重命名。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-i</code>：在覆盖文件之前进行提示。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>rm (remove)</strong></p>
+<ul>
+<li><em>作用</em>：删除文件或目录。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-r</code>：递归删除目录及其内容。</li>
+<li><code>-f</code>：强制执行，不进行提示。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>mkdir (make directory)</strong></p>
+<ul>
+<li><em>作用</em>：创建新目录。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-p</code>：递归创建目录，如果父目录不存在也会创建。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>rmdir (remove directory)</strong></p>
+<ul>
+<li><em>作用</em>：删除空目录。</li>
+<li><em>参数</em>：目标目录的路径。</li>
+</ul>
+</li>
+<li><p><strong>touch</strong></p>
+<ul>
+<li><em>作用</em>：更新文件的访问和修改时间，也可用于创建新文件。</li>
+<li><em>参数</em>：文件名。</li>
+</ul>
+</li>
+<li><p><strong>cat (concatenate)</strong></p>
+<ul>
+<li><em>作用</em>：连接文件并打印到标准输出。</li>
+<li><em>参数</em>：文件名。</li>
+</ul>
+</li>
+<li><p><strong>grep (global regular expression print)</strong></p>
+<ul>
+<li><em>作用</em>：在文件中搜索文本模式。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-i</code>：忽略大小写。</li>
+<li><code>-r</code>：递归搜索目录及其子目录。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>find</strong></p>
+<ul>
+<li><em>作用</em>：在文件系统中查找文件。</li>
+<li><em>常用参数</em>：<ul>
+<li>路径：指定查找的起始路径。</li>
+<li><code>-name</code>：按文件名进行匹配。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>chmod (change mode)</strong></p>
+<ul>
+<li><em>作用</em>：更改文件权限。</li>
+<li><em>常用参数</em>：<ul>
+<li>使用数字表示权限，例如，<code>chmod 755 filename</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>chown (change owner)</strong></p>
+<ul>
+<li><em>作用</em>：更改文件所有者。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>user:group</code>：指定新的所有者和组。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>ps (process status)</strong></p>
+<ul>
+<li><em>作用</em>：显示当前进程的状态。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>aux</code>：以详细信息的形式显示所有进程。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>查看端口</strong></p>
+<ul>
+<li><p>netstat&#x2F;ss -tulpn</p>
+<p>  参数解释：</p>
+<ul>
+<li><code>-t</code>: 显示TCP连接</li>
+<li><code>-u</code>: 显示UDP连接</li>
+<li><code>-l</code>: 显示监听中的端口</li>
+<li><code>-p</code>: 显示进程标识（PID）</li>
+<li><code>-n</code>: 显示数值形式的地址和端口号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>kill</strong></p>
+<ul>
+<li><em>作用</em>：终止进程。</li>
+<li><em>参数</em>：进程ID（PID）或进程名。</li>
+</ul>
+</li>
+<li><p><strong>通用参数</strong></p>
+<ul>
+<li><code>-h</code> 或 <code>--help</code>：<em>显示帮助信息</em>。</li>
+<li><code>-v</code> 或 <code>--version</code>：<em>显示命令的版本信息</em>。</li>
+</ul>
+</li>
+<li><p><strong>文件&#x2F;目录操作命令通用参数</strong></p>
+<ul>
+<li><code>-r</code> 或 <code>--recursive</code>：<em>递归操作</em>，用于处理目录及其内容。</li>
+<li><code>-f</code> 或 <code>--force</code>：<em>强制执行</em>，<em>不进行提示</em>。</li>
+</ul>
+</li>
+<li><p><strong>复制&#x2F;移动命令通用参数</strong></p>
+<ul>
+<li><code>-i</code>：<em>在操作之前进行提示</em>，询问用户是否确认执行。</li>
+</ul>
+</li>
+<li><p><strong>目录创建命令通用参数</strong></p>
+<ul>
+<li><code>-p</code>：<em>递归创建目录</em>，如果父目录不存在也会创建。</li>
+</ul>
+</li>
+<li><p><strong>搜索命令通用参数</strong></p>
+<ul>
+<li><code>-i</code>：<em>忽略大小写</em>。	</li>
+<li><code>-r</code> 或 <code>--recursive</code>：<em>递归搜索</em>目录及其子目录。</li>
+</ul>
+</li>
+<li><p><strong>权限相关命令通用参数</strong></p>
+<ul>
+<li><code>-v</code> 或 <code>--verbose</code>：<em>详细输出</em>，显示更多信息。</li>
+<li><code>-R</code> 或 <code>--recursive</code>：<em>递归地应用权限更改</em>。</li>
+</ul>
+</li>
+<li><p><strong>进程管理命令通用参数</strong></p>
+<ul>
+<li><code>-a</code>：<em>显示所有</em>进程。</li>
+<li><code>-u</code>：<em>显示与指定用户相关的</em>进程。<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>参数</th>
+<th>作用</th>
+<th>提示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ls</code></td>
+<td><code>-l</code></td>
+<td>列出目录内容</td>
+<td>以长格式显示详细信息</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td><code>-a</code></td>
+<td>列出目录内容</td>
+<td>显示所有文件，包括隐藏文件</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>目标路径</td>
+<td>改变当前工作目录</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td><code>-r</code></td>
+<td>复制文件或目录</td>
+<td>递归地复制目录及其内容</td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td><code>-i</code></td>
+<td>复制文件或目录</td>
+<td>在覆盖文件之前进行提示</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td><code>-i</code></td>
+<td>移动文件或目录</td>
+<td>在覆盖文件之前进行提示</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td><code>-r</code></td>
+<td>删除文件或目录</td>
+<td>递归删除目录及其内容</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td><code>-f</code></td>
+<td>删除文件或目录</td>
+<td>强制执行，不进行提示</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td><code>-p</code></td>
+<td>创建新目录</td>
+<td>递归创建目录，如果父目录不存在也会创建</td>
+</tr>
+<tr>
+<td><code>rmdir</code></td>
+<td>目标路径</td>
+<td>删除空目录</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>touch</code></td>
+<td>文件名</td>
+<td>更新文件的访问和修改时间，也可用于创建新文件</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td>文件名</td>
+<td>向文件追加内容</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>文件名</td>
+<td>输出文件内容</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td><code>-i</code></td>
+<td>在文件中搜索文本模式</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td><code>-r</code></td>
+<td>在文件中搜索文本模式</td>
+<td>递归搜索目录及其子目录</td>
+</tr>
+<tr>
+<td><code>find</code></td>
+<td>路径</td>
+<td>在文件系统中查找文件</td>
+<td>指定查找的起始路径</td>
+</tr>
+<tr>
+<td><code>find</code></td>
+<td><code>-name</code></td>
+<td>在文件系统中查找文件</td>
+<td>按文件名进行匹配</td>
+</tr>
+<tr>
+<td><code>chmod</code></td>
+<td>权限</td>
+<td>更改文件权限</td>
+<td>使用数字表示权限，例如，<code>chmod rwx filename</code></td>
+</tr>
+<tr>
+<td><code>chown</code></td>
+<td><code>user:group</code></td>
+<td>更改文件所有者</td>
+<td>指定新的所有者和组</td>
+</tr>
+<tr>
+<td><code>ps</code></td>
+<td><code>-aux</code></td>
+<td>显示当前进程的状态</td>
+<td>以详细信息的形式显示所有进程</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>进程ID（PID）或进程名</td>
+<td>终止进程</td>
+<td>-</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="硬链接和软链接（ln）"><a href="#硬链接和软链接（ln）" class="headerlink" title="硬链接和软链接（ln）"></a>硬链接和软链接（ln）</h2><p> <strong>硬链接(不加参数)</strong>:相当于将文件又创建了一份，删除其中一份不影响其他文件</p>
+<p> <strong>软链接（加参数：-s）</strong>：相当于创建了一个快捷键</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">示例：ln <span class="token parameter variable">-s</span> 源目录/源文件 目标目录/目标文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h2><ol>
+<li><p><strong>useradd</strong></p>
+<ul>
+<li><em>作用</em>：创建用户。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-m</code>：默认在当前目录自动创建用户。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>userdel</strong></p>
+<ul>
+<li><em>作用</em>：删除用户。</li>
+<li><em>常用参数</em>：<ul>
+<li><code>-r</code>：删除用户的文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>su、sudo</strong></p>
+<ul>
+<li><em>作用</em>：切换用户。</li>
+<li><em>说明</em>：su必须告知密码，而sudo只是为账号临时分配一定操作权限。</li>
+</ul>
+</li>
+<li><p>修改用户名</p>
+<h4 id="临时生效"><a href="#临时生效" class="headerlink" title="临时生效"></a>临时生效</h4><p>通过<code>hostname</code>进行修改，输入命令<code>hostname 主机名</code>，重新登录 <code>shell</code> 生效。这个命令的作用是暂时修改linux的主机名，它的存活时间是linux当前的运行时间，也就是在下一次重启前的运行时间内。一般修改以后立即生效，但这只是临时生效，不是永久生效，重启系统之后会还原。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos7 ~<span class="token punctuation">]</span><span class="token comment"># hostname test</span>
+<span class="token punctuation">[</span>root@centos7 ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新登录<code>shell</code>之后主机名已经被修改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="永久方法"><a href="#永久方法" class="headerlink" title="永久方法"></a>永久方法</h4><h6 id="通过修改配置文件-etc-sysconfig-network"><a href="#通过修改配置文件-etc-sysconfig-network" class="headerlink" title="通过修改配置文件/etc/sysconfig/network"></a>通过修改配置文件<code>/etc/sysconfig/network</code></h6><p>在这个配置文件中底部添加一条HOSTNAME&#x3D;主机名(可自定义)，这个修改它能够实现永久修改linux的主机名，但是它不会立即生效，也不会重新登录shell生效，而是要重启系统才能生效。通过修改此配置文件，再配合hostname命令，可以实现立即永久修改linux的主机名，当然了，至少需要重启shell才可以。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/sysconfig/network</span>
+<span class="token comment"># Created by anaconda</span>
+<span class="token assign-left variable">NETWORKING_IPV6</span><span class="token operator">=</span>no
+<span class="token assign-left variable">PEERNTP</span><span class="token operator">=</span>no
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果是 Ubuntu 系统，则需要修改文件 &#x2F;etc&#x2F;hostname， 将其对应的主机名修改为新的主机名。<br>最后，需要将 <code>/etc/hosts</code> 中 127.0.0.1 对应的老主机名更换为新的主机名（如果有需要）。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/hosts</span>
+<span class="token number">127.0</span>.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="通过命令hostnamectl-set-hostname-主机名修改"><a href="#通过命令hostnamectl-set-hostname-主机名修改" class="headerlink" title="通过命令hostnamectl set-hostname 主机名修改"></a>通过命令<code>hostnamectl set-hostname 主机名</code>修改</h6><p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=centos7&spm=1001.2101.3001.7020">centos7</a>系统可以直接通过命令<code>hostnamectl set-hostname 主机名</code>进行修改，修改完毕后重新登录 <code>shell</code> 就可以了。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># hostnamectl set-hostname centos7</span>
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><ol>
+<li><p><strong>什么是进程</strong></p>
+<ul>
+<li><p>每一个进程都会有一个父进程</p>
+</li>
+<li><p>进程分两种形式：前台、后台</p>
+</li>
+<li><p>一般服务器都是后台运行</p>
+</li>
+</ul>
+</li>
+<li><p><strong>命令</strong></p>
+<ul>
+<li><em>Ps -xx</em> :查看当前运行的进程<ul>
+<li>‘-a’ ：显示所有运行的进程</li>
+<li>‘-u’ ：以用户的信息显示进程</li>
+<li>‘-x’ ：显示后台运行进程的参数</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> <span class="token parameter variable">-aux</span> <span class="token operator">|</span> <span class="token function">grep</span> mysql <span class="token comment">#查看关于mysql的所有进程</span>
+
+<span class="token comment"># | 管道符，ps -aux运行的结果作为grep的数据</span>
+<span class="token comment"># grep筛选命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="firewall管理"><a href="#firewall管理" class="headerlink" title="firewall管理"></a>firewall管理</h2><ol>
+<li><p><strong>查看防火墙状态：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--state</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>启用防火墙：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl start firewalld
+或者
+<span class="token function">sudo</span> <span class="token function">service</span> firewalld start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>停止防火墙：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl stop firewalld
+或者
+<span class="token function">sudo</span> <span class="token function">service</span> firewalld stop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>重启防火墙：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart firewalld
+或者
+<span class="token function">sudo</span> <span class="token function">service</span> firewalld restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>查看防火墙规则：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#查看全部信息</span>
+<span class="token function">sudo</span> firewall-cmd --list-all
+<span class="token comment">#只看端口</span>
+<span class="token function">sudo</span> firewall-cmd --list-ports<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>添加允许端口：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#--permanent永久生效 --zone作用域</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span>/tcp <span class="token parameter variable">--permanent</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>重新载入防火墙规则：</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--reload</span>
+或者
+<span class="token function">sudo</span> systemctl restart firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><h3 id="1-JDK的安装与卸载（rpm安装）无需配置环境变量"><a href="#1-JDK的安装与卸载（rpm安装）无需配置环境变量" class="headerlink" title="1.JDK的安装与卸载（rpm安装）无需配置环境变量"></a>1.<strong>JDK的安装与卸载（rpm安装）</strong>无需配置环境变量</h3><ul>
+<li><p><em>检查版本</em>: java -version</p>
+</li>
+<li><p><em>显示jdk具体版本</em>：rpm -qa|grep jdk</p>
+</li>
+<li><p><em>卸载jdk</em>:rpm -e –nodeps jdk??</p>
+</li>
+<li><p><em>安装jdk</em>:rpm -ivh jdk??</p>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"> <span class="token comment">#显示具体版本</span>
+ <span class="token punctuation">[</span>root@localhost<span class="token punctuation">]</span>/home/usrsan<span class="token comment"># rpm -qa|grep jdk </span>
+ java-1.7.0-openjdk-headless-1.7.0.261-2.6.22.2.el7_8.x86_64
+
+ <span class="token comment">#卸载jdk</span>
+ <span class="token punctuation">[</span>root@localhost<span class="token punctuation">]</span>/home/usrsan<span class="token comment"># rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.261-2.6.22.2.el7_8.x86_64</span>
+
+ <span class="token comment">#查看版本</span>
+ <span class="token punctuation">[</span>root@localhost<span class="token punctuation">]</span>/home/usrsan<span class="token comment"># java -version</span>
+ zsh: java: 未找到命令<span class="token punctuation">..</span>.
+ zsh: <span class="token builtin class-name">command</span> not found: <span class="token function">java</span>
+ <span class="token punctuation">[</span>root@localhost<span class="token punctuation">]</span>/home/usrsan<span class="token comment"># ls -al</span>
+ 总用量 <span class="token number">175300</span>
+ drwxr-xr-x. <span class="token number">2</span> root root        <span class="token number">37</span> <span class="token number">12</span>月 <span class="token number">16</span> 09:17 <span class="token builtin class-name">.</span>
+ drwxr-xr-x. <span class="token number">4</span> root root        <span class="token number">31</span> <span class="token number">12</span>月 <span class="token number">16</span> 09:16 <span class="token punctuation">..</span>
+ -rw-r--r--. <span class="token number">1</span> root root <span class="token number">179505388</span> <span class="token number">12</span>月 <span class="token number">16</span> 09:17 jdk-8u221-linux-x64.rpm
+
+<span class="token comment">#安装jdk</span>
+ <span class="token punctuation">[</span>root@localhost<span class="token punctuation">]</span>/home/usrsan<span class="token comment"># rpm -ivh jdk-8u221-linux-x64.rpm </span>
+ 警告：jdk-8u221-linux-x64.rpm: 头V3 RSA/SHA256 Signature, 密钥 ID ec551f03: NOKEY
+ 准备中<span class="token punctuation">..</span>.                          <span class="token comment">################################# [100%]</span>
+ 正在升级/安装<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<ul>
+<li><em>配置环境变量</em>：在&#x2F;etc&#x2F;profile文件末尾追加以下内容</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/java/jdk1.8.0_221-amd64
+<span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib.tools.jar
+<span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token environment constant">PATH</span> CLASSPATH JAVA_HOME<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-tomcat的安装-压缩包安装"><a href="#2-tomcat的安装-压缩包安装" class="headerlink" title="2.tomcat的安装(压缩包安装)"></a>2.<strong>tomcat的安装(压缩包安装)</strong></h3><ul>
+<li><em>下载并上传tomcat</em></li>
+<li><em>解压缩文件</em>：tar -zxvf apache-tomcat-9.0.22.tar.gz</li>
+<li><em>运行<code>./startup.sh</code>和停止<code>./shutdown.sh</code></em></li>
+</ul>
+<h3 id="3-Docker安装（yum安装）"><a href="#3-Docker安装（yum安装）" class="headerlink" title="3.Docker安装（yum安装）"></a>3.Docker安装（yum安装）</h3><ul>
+<li><p><strong>使用官方安装脚本自动安装</strong></p>
+<p>  安装命令如下：</p>
+  <pre class="line-numbers language-none"><code class="language-none">curl -fsSL https:&#x2F;&#x2F;get.docker.com | bash -s docker --mirror Aliyun<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>手动安装</strong></p>
+</li>
+</ul>
+<p>​	<a target="_blank" rel="noopener" href="https://www.runoob.com/docker/centos-docker-install.html">docker手动安装教程</a></p>
+<h2 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h2><h4 id="zsh安装"><a href="#zsh安装" class="headerlink" title="zsh安装"></a>zsh安装</h4><p>**Ubuntu&#x2F;Kali&#x2F;Debian 安装 **</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装zsh</span>
+<span class="token function">apt</span> <span class="token function">install</span> <span class="token function">zsh</span>
+
+<span class="token comment"># 更改默认shell为zsh</span>
+chsh <span class="token parameter variable">-s</span> /bin/zsh
+
+<span class="token comment"># 安装oh-my-zsh</span>
+<span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span>"</span>
+
+<span class="token comment"># 下载命令补全插件</span>
+<span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="token variable">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
+
+<span class="token comment"># zshrc配置文件中修改如下内容</span>
+<span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>git zsh-autosuggestions<span class="token punctuation">)</span>
+
+<span class="token comment"># 重新加载zsh配置</span>
+<span class="token function">zsh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>CentOS 安装</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装zsh</span>
+yum <span class="token function">install</span> <span class="token function">zsh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>除了安装使用 yum 以外，其他配置方法和上面其他发行版系统一样，这里就不再赘述了。</p>
+<p><strong>zsh 插件</strong></p>
+<p><strong>autojump</strong></p>
+<p>快捷目录跳转插件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> autojump autojump-zsh <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在 <code>~/.zshrc</code> 中配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>其他的插件 autojump<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输入 <code>zsh</code> 命令生效配置后即可正常使用 <code>j</code> 命令，下面是简单的演示效果：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token environment constant">BASH</span><span class="token comment"># root @ centos in ~/test/23333 [18:45:14]</span>
+$ <span class="token builtin class-name">pwd</span>
+/root/test/23333
+
+<span class="token comment"># root @ centos in ~/test/23333 [18:45:16]</span>
+$ <span class="token builtin class-name">cd</span> ~
+
+<span class="token comment"># root @ centos in ~ [18:45:17] 直接 j 2 就跳转到历史目录了</span>
+$ j <span class="token number">2</span>
+/root/test/23333
+
+<span class="token comment"># root @ centos in ~/test/23333 [18:45:20]</span>
+$ <span class="token builtin class-name">pwd</span>
+/root/test/23333<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>zsh-syntax-highlighting</strong></p>
+<p>命令输入正确会绿色高亮显示，可以有效地检测命令语法是否正确</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/.oh-my-zsh/custom/plugins
+<span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在 <code>~/.zshrc</code> 中配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>其他的插件 zsh-syntax-highlighting<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输入 <code>zsh</code> 命令生效配置</p>
+<p><strong>autosuggestions</strong></p>
+<p>终端下自动提示接下来可能要输入的命令，这个实际使用效率还是比较高的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/.oh-my-zsh/custom/plugins
+<span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在 <code>~/.zshrc</code> 中配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>其他的插件 zsh-autosuggestions<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输入 <code>zsh</code> 命令生效配置</p>
+<h4 id="bash和zsh切换"><a href="#bash和zsh切换" class="headerlink" title="bash和zsh切换"></a>bash和zsh切换</h4><ul>
+<li><p><em>1.使用<code>chsh</code>命令：</em></p>
+<p><code>chsh</code>命令允许你更改默认的shell。在终端中运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">chsh <span class="token parameter variable">-s</span> /bin/bash  <span class="token comment"># 切换到bash</span>
+chsh <span class="token parameter variable">-s</span> /bin/zsh  <span class="token comment"># 切换到zsh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<p>   这将分别将默认shell更改为bash或zsh。你需要重新登录才能看到更改。</p>
+<ul>
+<li><p><em>2.手动切换：</em></p>
+<p>如果你只是想在当前会话中切换shell，而不更改默认shell，你可以手动运行bash或zsh：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span>  <span class="token comment"># 切换到bash</span>
+<span class="token function">zsh</span>   <span class="token comment"># 切换到zsh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="vim使用"><a href="#vim使用" class="headerlink" title="vim使用"></a>vim使用</h2><h3 id="Vim-的基础使用方法："><a href="#Vim-的基础使用方法：" class="headerlink" title="Vim 的基础使用方法："></a>Vim 的基础使用方法：</h3><h4 id="1-启动-Vim："><a href="#1-启动-Vim：" class="headerlink" title="1. 启动 Vim："></a>1. <strong>启动 Vim：</strong></h4><pre class="line-numbers language-none"><code class="language-none">bashCopy code
+vim<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>或者</p>
+<pre class="line-numbers language-none"><code class="language-none">bashCopy code
+vim 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="2-Vim-模式："><a href="#2-Vim-模式：" class="headerlink" title="2. Vim 模式："></a>2. <strong>Vim 模式：</strong></h4><ul>
+<li>Normal 模式：<ul>
+<li>默认模式，用于导航、剪切、复制等。</li>
+</ul>
+</li>
+<li>Insert 模式：<ul>
+<li>用于输入文本。</li>
+</ul>
+</li>
+<li>Visual 模式：<ul>
+<li>用于选择文本块。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-基本移动："><a href="#3-基本移动：" class="headerlink" title="3. 基本移动："></a>3. <strong>基本移动：</strong></h4><ul>
+<li>h、j、k、l：<ul>
+<li>分别是左、下、上、右，用于在 Normal 模式下移动光标。</li>
+</ul>
+</li>
+<li>w、b：<ul>
+<li>分别是向前和向后移动一个单词。</li>
+</ul>
+</li>
+<li>gg、G：<ul>
+<li>跳转到文件开头和文件末尾。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-编辑操作："><a href="#4-编辑操作：" class="headerlink" title="4. 编辑操作："></a>4. <strong>编辑操作：</strong></h4><ul>
+<li>i、I、a、A：<ul>
+<li>进入 Insert 模式，分别在当前光标前插入、行首插入、光标后插入、行尾插入。</li>
+</ul>
+</li>
+<li>o、O：<ul>
+<li>在当前行的下方（o）或上方（O）插入新行。</li>
+</ul>
+</li>
+<li>x、dd：<ul>
+<li>删除光标处的字符（x）或整行（dd）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-复制和粘贴："><a href="#5-复制和粘贴：" class="headerlink" title="5. 复制和粘贴："></a>5. <strong>复制和粘贴：</strong></h4><ul>
+<li>yy：<ul>
+<li>复制当前行。</li>
+</ul>
+</li>
+<li>p：<ul>
+<li>粘贴复制的内容。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-撤销和重做："><a href="#6-撤销和重做：" class="headerlink" title="6. 撤销和重做："></a>6. <strong>撤销和重做：</strong></h4><ul>
+<li>u：<ul>
+<li>撤销上一步操作。</li>
+</ul>
+</li>
+<li>Ctrl + r：<ul>
+<li>重做。</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-搜索和替换："><a href="#7-搜索和替换：" class="headerlink" title="7. 搜索和替换："></a>7. <strong>搜索和替换：</strong></h4><ul>
+<li>&#x2F;search：<ul>
+<li>在 Normal 模式下输入 <code>/</code> 后跟要搜索的内容，按 Enter 开始搜索。</li>
+</ul>
+</li>
+<li>:s&#x2F;old&#x2F;new&#x2F;g：<ul>
+<li>替换文档中所有出现的 “old” 为 “new”。</li>
+</ul>
+</li>
+</ul>
+<h4 id="8-保存和退出："><a href="#8-保存和退出：" class="headerlink" title="8. 保存和退出："></a>8. <strong>保存和退出：</strong></h4><ul>
+<li>:w：<ul>
+<li>保存当前文件。</li>
+</ul>
+</li>
+<li>:q：<ul>
+<li>退出 Vim。</li>
+</ul>
+</li>
+<li>:wq 或 :x：<ul>
+<li>保存并退出。</li>
+</ul>
+</li>
+<li>:q!：<ul>
+<li>强制退出，不保存更改。</li>
+</ul>
+</li>
+</ul>
+<h4 id="9-Visual-模式："><a href="#9-Visual-模式：" class="headerlink" title="9. Visual 模式："></a>9. <strong>Visual 模式：</strong></h4><ul>
+<li>v：<ul>
+<li>逐字符选择。</li>
+</ul>
+</li>
+<li>V：<ul>
+<li>逐行选择。</li>
+</ul>
+</li>
+<li>Ctrl + v：<ul>
+<li>逐块选择（矩形选择）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Vim-的高级使用方法："><a href="#Vim-的高级使用方法：" class="headerlink" title="Vim 的高级使用方法："></a>Vim 的高级使用方法：</h3><h4 id="1-分屏和多窗口："><a href="#1-分屏和多窗口：" class="headerlink" title="1. 分屏和多窗口："></a>1. <strong>分屏和多窗口：</strong></h4><ul>
+<li>:split 或 :sp：<ul>
+<li>水平分割窗口。</li>
+</ul>
+</li>
+<li>:vsplit 或 :vsp：<ul>
+<li>垂直分割窗口。</li>
+</ul>
+</li>
+<li>Ctrl + w + 方向键：<ul>
+<li>在窗口之间切换。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-标签页："><a href="#2-标签页：" class="headerlink" title="2. 标签页："></a>2. <strong>标签页：</strong></h4><ul>
+<li>:tabnew 文件名：<ul>
+<li>打开一个新标签页。</li>
+</ul>
+</li>
+<li>:tabnext 或 :tabn：<ul>
+<li>切换到下一个标签页。</li>
+</ul>
+</li>
+<li>:tabprev 或 :tabp：<ul>
+<li>切换到上一个标签页。</li>
+</ul>
+</li>
+<li>:tabclose 或 :tabc：<ul>
+<li>关闭当前标签页。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-宏录制："><a href="#3-宏录制：" class="headerlink" title="3. 宏录制："></a>3. <strong>宏录制：</strong></h4><ul>
+<li>q + 字母：<ul>
+<li>开始录制宏。例如，<code>qa</code> 开始录制到寄存器 a。</li>
+</ul>
+</li>
+<li>q：<ul>
+<li>结束录制宏。</li>
+</ul>
+</li>
+<li>@ + 字母：<ul>
+<li>执行宏。例如，<code>@a</code> 执行寄存器 a 中的宏。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-自定义配置："><a href="#4-自定义配置：" class="headerlink" title="4. 自定义配置："></a>4. <strong>自定义配置：</strong></h4><ul>
+<li>~&#x2F;.vimrc 文件：<ul>
+<li>你可以在此文件中添加 Vim 配置，定制你的编辑器环境。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-插件管理器："><a href="#5-插件管理器：" class="headerlink" title="5. 插件管理器："></a>5. <strong>插件管理器：</strong></h4><ul>
+<li>使用插件管理器如 Vundle、Pathogen 或 Vim-Plug，以便轻松管理和安装插件。</li>
+</ul>
+<h4 id="6-语法高亮和主题："><a href="#6-语法高亮和主题：" class="headerlink" title="6. 语法高亮和主题："></a>6. <strong>语法高亮和主题：</strong></h4><ul>
+<li>启用语法高亮：在 Normal 模式下输入 <code>:syntax on</code>。</li>
+<li>切换主题：在 Normal 模式下输入 <code>:colorscheme 主题名称</code>。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">十九</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://jieyushijiu.github.io/2024/02/01/linux-xue-xi-bi-ji/">http://jieyushijiu.github.io/2024/02/01/linux-xue-xi-bi-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">十九</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'UeXwwtNohkucHQJKkJMsBSuP-gzGzoHsz',
+        appKey: 'OtFzVOuWHb7eJlS2p1LCYtqN',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '季月十九',
+        enableQQ: true,
+        requiredFields: ['nick','mail'], //设置必填项
+        emojiCDN: '//i0.hdslb.com/bfs/emote/', //设置哔站表情包地址
+        // 表情title和图片映射
+        emojiMaps: {
+        "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+        "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+        "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+        "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+        },
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/02/01/linux-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Linux笔记">
+                        
+                        <span class="card-title">Linux笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/02/01/hexo-github-bu-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hexo+github部署">
+                        
+                        <span class="card-title">Hexo+github部署</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7301697261"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">十九</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">10.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jieyushijiu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1416720983@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1416720983" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1416720983" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    <!-- 动态标签栏 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title, st; 
+        document.addEventListener("visibilitychange", function () { 
+        document.hidden ? (document.title = "爱我，别走！", clearTimeout(st)) : (document.title = "咦，你来啦！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+
+</body>
+
+</html>
